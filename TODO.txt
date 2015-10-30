@@ -1,0 +1,48 @@
+
+Main NBM:
+
+Seperate conversation specifics from messageform class
+Improve taskbarnotifier - let the user click on the window to start a conversation
+About box
+Cancel connection ability - thats fucking some bad shit up man
+
+
+Plugin:
+
+Possibly seperate incoming and outgoing events into 2 different listeners?
+Move NBM-engine specific settings into the main nbm assembly
+
+
+MSN:
+
+DONE: Update to MSNP8
+Update display names in the friend cache
+
+
+Yahoo:
+
+
+
+TreeViewEx:
+
+Fix redrawing problems
+
+
+Proxy:
+
+Implement SOCKSv4, SOCKSv5 and HTTP proxying
+
+=========================================================
+
+Options on the options dialog but dont work:
+
+proxy connections
+balloon tooltip
+show emoticons
+
+
+options that need to be put on the the options dialog:
+
+logging
+colour changes for text etc
+

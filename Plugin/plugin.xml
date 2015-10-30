@@ -1,0 +1,2551 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Plugin</name>
+    </assembly>
+    <members>
+        <member name="T:NBM.Plugin.IConstants">
+            <summary>
+            Holds protocol constants - all plugins must implement this interface
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.IConstants.SupportsFileTransfer">
+            <summary>
+            True if the plugin supports file transfer during conversations
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.IConstants.ReasonSentWithAddFriend">
+            <summary>
+            True if the plugin supports sending a message when asking to be added to another user's
+            contact list
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.IConstants.Name">
+            <summary>
+            Name of plugin
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.IConstants.DefaultServerHost">
+            <summary>
+            Default server host to connect to
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.IConstants.DefaultServerPort">
+            <summary>
+            Default server port to connect to
+            </summary>
+        </member>
+        <member name="T:NBM.Plugin.OperationCompleteHandler">
+            <summary>
+            Delegate to register with the OperationCompleteEvent class.
+            </summary>
+        </member>
+        <member name="T:NBM.Plugin.OperationCompleteArgs">
+            <summary>
+            Arguments to pass to OperationCompleteEvent.Execute() to report the success or failure
+            of the specified operation
+            <seealso cref="T:NBM.Plugin.OperationCompleteEvent"/>
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.OperationCompleteArgs.success">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.OperationCompleteArgs.isFatal">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.OperationCompleteArgs.errorMessage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.OperationCompleteArgs.#ctor">
+            <summary>
+            Constructs an OperationCompleteArgs reporting success
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.OperationCompleteArgs.#ctor(System.String,System.Boolean)">
+            <summary>
+            Constructs an OperationCompleteArgs reporting that an error occurred
+            </summary>
+            <param name="errorMessage">Error message</param>
+            <param name="isFatal">Whether the error is fatal</param>
+        </member>
+        <member name="P:NBM.Plugin.OperationCompleteArgs.Success">
+            <summary>
+            True if operation was successful, false otherwise
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.OperationCompleteArgs.ErrorMessage">
+            <summary>
+            Error message if the operation failed
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.OperationCompleteArgs.IsFatalError">
+            <summary>
+            Whether the error is fatal
+            </summary>
+        </member>
+        <member name="T:NBM.Plugin.OperationCompleteEvent">
+            <summary>
+            Used by plugins to determine when an operation has completed.
+            When an operation is finished, plugins should call Execute() and pass an
+            OperationCompleteArgs instance which reports the success of the operation.
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.OperationCompleteEvent.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.OperationCompleteEvent.#ctor(NBM.Plugin.OperationCompleteHandler)">
+             <summary>
+            
+             </summary>
+             <param name="handler">Initial handler to register</param>
+        </member>
+        <member name="M:NBM.Plugin.OperationCompleteEvent.#ctor(NBM.Plugin.OperationCompleteHandler,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="handler">Initial handler to register</param>
+            <param name="tag">Object to pass to handler when executed</param>
+        </member>
+        <member name="M:NBM.Plugin.OperationCompleteEvent.RegisterEvent(NBM.Plugin.OperationCompleteHandler)">
+            <summary>
+            Register a delegate to be executed when Execute() is called.
+            Methods are executed first in last out.
+            </summary>
+            <param name="handler"></param>
+        </member>
+        <member name="M:NBM.Plugin.OperationCompleteEvent.RegisterEvent(NBM.Plugin.OperationCompleteHandler,System.Object)">
+            <summary>
+            Register a delegate to be executed when Execute() is called.
+            Methods are executed first in last out.
+            </summary>
+            <param name="handler"></param>
+            <param name="tag">Object to pass to handler when executed</param>
+        </member>
+        <member name="M:NBM.Plugin.OperationCompleteEvent.Execute(NBM.Plugin.OperationCompleteArgs)">
+            <summary>
+            Execute all registered delegates and report either success or failure of the
+            operation.
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="T:NBM.Plugin.ProtocolListenerEnumerator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolListenerEnumerator.#ctor(NBM.Plugin.ProtocolListenerCollection)">
+            <summary>
+            
+            </summary>
+            <param name="collection"></param>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolListenerEnumerator.Reset">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolListenerEnumerator.MoveNext">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolListenerEnumerator.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ProtocolListenerEnumerator.System#Collections#IEnumerator#Current">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ProtocolListenerEnumerator.Current">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:NBM.Plugin.ProtocolListenerCollection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolListenerCollection.System#ICloneable#Clone">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolListenerCollection.Clone">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolListenerCollection.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolListenerCollection.GetEnumerator">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolListenerCollection.CopyTo(System.Array,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="array"></param>
+            <param name="count"></param>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolListenerCollection.System#Collections#IList#Add(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolListenerCollection.Add(NBM.Plugin.IProtocolListener)">
+            <summary>
+            
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolListenerCollection.Clear">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolListenerCollection.System#Collections#IList#Contains(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolListenerCollection.Contains(NBM.Plugin.IProtocolListener)">
+            <summary>
+            
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolListenerCollection.System#Collections#IList#IndexOf(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolListenerCollection.IndexOf(NBM.Plugin.IProtocolListener)">
+            <summary>
+            
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolListenerCollection.System#Collections#IList#Insert(System.Int32,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <param name="o"></param>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolListenerCollection.Insert(System.Int32,NBM.Plugin.IProtocolListener)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <param name="o"></param>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolListenerCollection.System#Collections#IList#Remove(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="o"></param>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolListenerCollection.Remove(NBM.Plugin.IProtocolListener)">
+            <summary>
+            
+            </summary>
+            <param name="o"></param>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolListenerCollection.RemoveAt(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="P:NBM.Plugin.ProtocolListenerCollection.Count">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ProtocolListenerCollection.IsSynchronized">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ProtocolListenerCollection.SyncRoot">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ProtocolListenerCollection.IsFixedSize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ProtocolListenerCollection.IsReadOnly">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ProtocolListenerCollection.System#Collections#IList#Item(System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ProtocolListenerCollection.Item(System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:NBM.Plugin.ProtocolServer">
+            <summary>
+            Server class for ProtocolControl.
+            <seealso cref="T:NBM.Plugin.ProtocolControl"/>
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolServer.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolServer.AddListener(NBM.Plugin.IProtocolListener)">
+            <summary>
+            
+            </summary>
+            <param name="listener"></param>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolServer.RemoveListener(NBM.Plugin.IProtocolListener)">
+            <summary>
+            
+            </summary>
+            <param name="listener"></param>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolServer.CreateConnection">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolServer.OnBeginConnect">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolServer.OnConnect">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolServer.OnConnectCanceled">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolServer.OnNormalDisconnect">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolServer.ForcedDisconnect">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolServer.OnChangeStatus(NBM.Plugin.OnlineStatus)">
+            <summary>
+            
+            </summary>
+            <param name="newStatus"></param>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolServer.StartInvitedConversation(NBM.Plugin.Friend,NBM.Plugin.OperationCompleteEvent,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="opCompleteEvent"></param>
+            <param name="tag"></param>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolServer.AddFriend(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolServer.RemoveFriend(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolServer.RemoveFriend(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="username"></param>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolServer.ContainsFriend(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolServer.ContainsFriend(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolServer.GetFriend(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolServer.AddFriendToList(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="username"></param>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolServer.RemoveFriendFromList(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolServer.BlockFriend(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolServer.UnblockFriend(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolServer.WriteDebug(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolServer.WriteDebug(System.String,System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="format"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolServer.PromptForStrangerHasAddedMe(NBM.Plugin.Friend,System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="reason"></param>
+            <param name="enableAddCheckbox"></param>
+        </member>
+        <member name="T:NBM.Plugin.ISettings">
+            <summary>
+            All protocol's settings implement this interface.
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ISettings.Load">
+            <summary>
+            Loads settings
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ISettings.Save">
+            <summary>
+            Saves settings
+            </summary>
+        </member>
+        <member name="T:NBM.Plugin.ProtocolControl">
+            <summary>
+            This is passed to the implemented IProtocol's constructor.
+            Classes that implement IProtocol use this class to raise events, e.g.
+            like a friend coming online or a chat session initiated.
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolControl.#ctor(NBM.Plugin.ProtocolServer)">
+            <summary>
+            Constructs a ProtocolControl.
+            </summary>
+            <param name="server">ProtocolServer to relay events onto</param>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolControl.CreateConnection">
+            <summary>
+            Creates a proxy connection. Use this for all network connections.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolControl.ForcedDisconnect">
+            <summary>
+            Call this when the server disconnects the plugin.
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolControl.StartInvitedConversation(NBM.Plugin.Friend,NBM.Plugin.OperationCompleteEvent,System.Object)">
+            <summary>
+            Call this when the plugin receives an invitation to a conversation
+            </summary>
+            <param name="friend"></param>
+            <param name="opCompleteEvent"></param>
+            <param name="tag">Plugin defined object</param>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolControl.AddFriend(NBM.Plugin.Friend)">
+            <summary>
+            Adds a friend to the contact list
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolControl.RemoveFriend(NBM.Plugin.Friend)">
+            <summary>
+            Removes a friend from the contact list
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolControl.RemoveFriend(System.String)">
+            <summary>
+            Removes a friend from the contact list
+            </summary>
+            <param name="username"></param>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolControl.ContainsFriend(NBM.Plugin.Friend)">
+            <summary>
+            Checks if the contact list already contains a friend
+            </summary>
+            <param name="friend"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolControl.ContainsFriend(System.String)">
+            <summary>
+            Checks if the contact list already contains a friend
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolControl.GetFriend(System.String)">
+            <summary>
+            Gets said friend from the contact list
+            </summary>
+            <param name="username">Username of friend</param>
+            <returns>null if friend is not found</returns>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolControl.WriteDebug(System.String)">
+            <summary>
+            Call this when the plugin wishes to write to the debug log
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolControl.WriteDebug(System.String,System.Object[])">
+            <summary>
+            Call this when the plugin wishes to write to the debug log
+            </summary>
+            <param name="format"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolControl.PromptForStrangerHasAddedMe(NBM.Plugin.Friend,System.String,System.Boolean)">
+            <summary>
+            Call this when the plugin wishes to ask the user what to do when a stranger has
+            added the user to their contact list
+            </summary>
+            <param name="friend"></param>
+            <param name="reason"></param>
+            <param name="enableAddCheckbox"></param>
+        </member>
+        <member name="T:NBM.Plugin.OnlineStatus">
+            <summary>
+            Available status's
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.OnlineStatus.Online">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.OnlineStatus.Away">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.OnlineStatus.Idle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.OnlineStatus.Busy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.OnlineStatus.AppearOffline">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.OnlineStatus.Offline">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:NBM.Plugin.IProtocolListener">
+            <summary>
+            Classes that implement this interface receive events about the protocol.
+            This should not be used by plugin authors.
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.IProtocolListener.OnFriendAdd(NBM.Plugin.Friend)">
+            <summary>
+            Called when a friend is added to the contact list
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Plugin.IProtocolListener.OnFriendRemove(NBM.Plugin.Friend)">
+            <summary>
+            Called when a friend is removed from the contact list
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Plugin.IProtocolListener.OnFriendChangeStatus(NBM.Plugin.Friend,NBM.Plugin.OnlineStatus)">
+            <summary>
+            Called when a friend changes their status
+            </summary>
+            <param name="friend"></param>
+            <param name="status"></param>
+        </member>
+        <member name="M:NBM.Plugin.IProtocolListener.OnFriendChangeDisplayName(NBM.Plugin.Friend,System.String)">
+            <summary>
+            Called when a friend changes their display name
+            </summary>
+            <param name="friend"></param>
+            <param name="newName"></param>
+        </member>
+        <member name="M:NBM.Plugin.IProtocolListener.OnBeginConnect">
+            <summary>
+            Called when a connection has started
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.IProtocolListener.OnConnect">
+            <summary>
+            Called when a connection has completed
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.IProtocolListener.OnConnectCanceled">
+            <summary>
+            When the connection is canceled
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.IProtocolListener.OnDisconnect(System.Boolean)">
+            <summary>
+            Called when the protocol is disconnected
+            </summary>
+            <param name="forced">True if the disconnection was unexpected, false if the user
+            requested the disconnect</param>
+        </member>
+        <member name="M:NBM.Plugin.IProtocolListener.OnChangeStatus(NBM.Plugin.OnlineStatus)">
+            <summary>
+            Called when the user changes his status
+            </summary>
+            <param name="status"></param>
+        </member>
+        <member name="M:NBM.Plugin.IProtocolListener.OnInvitedToConversation(NBM.Plugin.Friend,NBM.Plugin.OperationCompleteEvent,System.Object)">
+            <summary>
+            Called when the user has been invited to a conversation by someone else
+            </summary>
+            <param name="friend">Friend who's asked for a conversation</param>
+            <param name="opCompleteEvent"></param>
+            <param name="tag">Plugin-defined object</param>
+        </member>
+        <member name="M:NBM.Plugin.IProtocolListener.OnAddFriendToList(System.String)">
+            <summary>
+            Called when the user has added someone to their contact list
+            </summary>
+            <param name="username"></param>
+        </member>
+        <member name="M:NBM.Plugin.IProtocolListener.OnRemoveFriendFromList(NBM.Plugin.Friend)">
+            <summary>
+            Called when the user has removed someone from their contact list
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Plugin.IProtocolListener.OnBlockFriend(NBM.Plugin.Friend)">
+            <summary>
+            Called when the user blocks someone on their contact list
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Plugin.IProtocolListener.OnUnblockFriend(NBM.Plugin.Friend)">
+            <summary>
+            Called when the user unblocks someone on their contact list
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Plugin.IProtocolListener.OnWriteDebug(System.String)">
+            <summary>
+            Called when the plugin wishes to write something to the protocol's debug log
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:NBM.Plugin.IProtocolListener.OnPromptForStrangerHasAddedMe(NBM.Plugin.Friend,System.String,System.Boolean)">
+            <summary>
+            Called by the plugin when a stranger has added the user to their contact list
+            </summary>
+            <param name="friend"></param>
+            <param name="reason"></param>
+            <param name="enableAddCheckbox"></param>
+        </member>
+        <member name="T:NBM.Plugin.ArgThread">
+            <summary>
+            Just like System.Thread, except we can pass arguments to it.
+            <seealso cref="T:System.Threading.Thread"/>
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ArgThread.#ctor(System.Delegate)">
+            <summary>
+            Constructs an ArgThread.
+            </summary>
+            <param name="dele">Delegate to execute on Start()</param>
+        </member>
+        <member name="M:NBM.Plugin.ArgThread.OnThreadStart">
+            <summary>
+            Internal method that is passed to Thread.Start()
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ArgThread.Abort">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ArgThread.Abort(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="stateInfo"></param>
+        </member>
+        <member name="M:NBM.Plugin.ArgThread.Interrupt">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ArgThread.Join">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ArgThread.Join(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="millisecondsTimeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ArgThread.Join(System.TimeSpan)">
+            <summary>
+            
+            </summary>
+            <param name="timeSpan"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ArgThread.Resume">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ArgThread.Suspend">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ArgThread.Start">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ArgThread.Start(System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="P:NBM.Plugin.ArgThread.ApartmentState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ArgThread.CurrentCulture">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ArgThread.CurrentUICulture">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ArgThread.IsAlive">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ArgThread.IsBackground">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ArgThread.IsThreadPoolThread">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ArgThread.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ArgThread.Priority">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ArgThread.ThreadState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:NBM.Plugin.IConversationListener">
+            <summary>
+            Classes that implement this interface receive events about conversations.
+            This should not be used by plugin authors.
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.IConversationListener.OnConversationConnected">
+            <summary>
+            Called when the conversation connects
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.IConversationListener.OnConversationDisconnected">
+            <summary>
+            Called when the conversation disconnects
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.IConversationListener.OnFriendSay(NBM.Plugin.Friend,System.String)">
+            <summary>
+            Called when a friend says something in conversation
+            </summary>
+            <param name="friend"></param>
+            <param name="text">Message</param>
+        </member>
+        <member name="M:NBM.Plugin.IConversationListener.OnFriendJoin(NBM.Plugin.Friend)">
+            <summary>
+            Called when a friend joins a conversation
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Plugin.IConversationListener.OnFriendLeave(NBM.Plugin.Friend)">
+            <summary>
+            Called when a friend leaves a conversation
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Plugin.IConversationListener.OnTypingNotification(NBM.Plugin.Friend)">
+            <summary>
+            Called when a typing notification is received
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Plugin.IConversationListener.OnUserSay(System.String)">
+            <summary>
+            Called when the user says something
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:NBM.Plugin.IConversationListener.OnFileSendInvitation(NBM.Plugin.Friend,System.String)">
+            <summary>
+            Called when a file invitation is received
+            </summary>
+            <param name="friend"></param>
+            <param name="filename"></param>
+        </member>
+        <member name="T:IStorage">
+            <summary>
+            Base interface for storing key-value settings.
+            </summary>
+        </member>
+        <member name="M:IStorage.Close">
+            <summary>
+            Closes the storage medium
+            </summary>
+        </member>
+        <member name="M:IStorage.Flush">
+            <summary>
+            Flushes current data (if buffered)
+            </summary>
+        </member>
+        <member name="M:IStorage.CreateSubSection(System.String)">
+            <summary>
+            Creates a subsection - throws an UnsupportedException() if not supported.
+            </summary>
+        </member>
+        <member name="M:IStorage.Write(System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="val"></param>
+        </member>
+        <member name="M:IStorage.Write(System.String,System.Char)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="val"></param>
+        </member>
+        <member name="M:IStorage.Write(System.String,System.Byte)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="val"></param>
+        </member>
+        <member name="M:IStorage.Write(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="val"></param>
+        </member>
+        <member name="M:IStorage.Write(System.String,System.Single)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="val"></param>
+        </member>
+        <member name="M:IStorage.Write(System.String,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="val"></param>
+        </member>
+        <member name="M:IStorage.Write(System.String,System.Int16)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="val"></param>
+        </member>
+        <member name="M:IStorage.Write(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="val"></param>
+        </member>
+        <member name="M:IStorage.Write(System.String,System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="val"></param>
+        </member>
+        <member name="M:IStorage.Write(System.String,System.UInt16)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="val"></param>
+        </member>
+        <member name="M:IStorage.Write(System.String,System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="val"></param>
+        </member>
+        <member name="M:IStorage.Write(System.String,System.UInt64)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="val"></param>
+        </member>
+        <member name="M:IStorage.ReadBool(System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="def"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IStorage.ReadChar(System.String,System.Char)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="def"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IStorage.ReadByte(System.String,System.Byte)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="def"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IStorage.ReadString(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="def"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IStorage.ReadSingle(System.String,System.Single)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:IStorage.ReadDouble(System.String,System.Double)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:IStorage.ReadInt16(System.String,System.Int16)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:IStorage.ReadInt32(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:IStorage.ReadInt64(System.String,System.Int64)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:IStorage.ReadUInt16(System.String,System.UInt16)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:IStorage.ReadUInt32(System.String,System.UInt32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:IStorage.ReadUInt64(System.String,System.UInt64)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:NBM.Plugin.IProtocol">
+            <summary>
+            All protocol implementations implement this interface.
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.IProtocol.Connect(NBM.Plugin.OperationCompleteEvent)">
+            <summary>
+            Implemented by plugins to connect
+            </summary>
+            <param name="opCompleteEvent"></param>
+        </member>
+        <member name="M:NBM.Plugin.IProtocol.Disconnect(NBM.Plugin.OperationCompleteEvent)">
+            <summary>
+            Implemented by plugins to disconnect
+            </summary>
+            <param name="opCompleteEvent"></param>
+        </member>
+        <member name="M:NBM.Plugin.IProtocol.CancelConnection(NBM.Plugin.OperationCompleteEvent)">
+            <summary>
+            Implemented by plugins to cancel the current connection
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.IProtocol.ChangeStatus(NBM.Plugin.OnlineStatus,NBM.Plugin.OperationCompleteEvent)">
+            <summary>
+            Implemented by plugins to change the user's status
+            </summary>
+            <param name="status">Status to change to</param>
+            <param name="opCompleteEvent"></param>
+        </member>
+        <member name="M:NBM.Plugin.IProtocol.BlockFriend(NBM.Plugin.Friend,NBM.Plugin.OperationCompleteEvent)">
+            <summary>
+            Implemented by plugins to block a friend on the contact list
+            </summary>
+            <param name="friend">Friend to block</param>
+            <param name="opCompleteEvent"></param>
+        </member>
+        <member name="M:NBM.Plugin.IProtocol.UnblockFriend(NBM.Plugin.Friend,NBM.Plugin.OperationCompleteEvent)">
+            <summary>
+            Implemented by plugins to unblock a friend on the contact list
+            </summary>
+            <param name="friend">Friend to block</param>
+            <param name="opCompleteEvent"></param>
+        </member>
+        <member name="M:NBM.Plugin.IProtocol.AddFriendToList(System.String,System.String,NBM.Plugin.OperationCompleteEvent)">
+            <summary>
+            Implemented by plugins to add a friend to the contact list
+            </summary>
+            <param name="username">Username to add</param>
+            <param name="message">[optional] Message to send to friend</param>
+            <param name="opCompleteEvent"></param>
+        </member>
+        <member name="M:NBM.Plugin.IProtocol.RemoveFriendFromList(NBM.Plugin.Friend,NBM.Plugin.OperationCompleteEvent)">
+            <summary>
+            Implemented by plugins to remove a friend from the contact list
+            </summary>
+            <param name="friend">Friend on list to remove</param>
+            <param name="opCompleteEvent"></param>
+        </member>
+        <member name="M:NBM.Plugin.IProtocol.SelfDestruct">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.IProtocol.PromptForStrangerHasAddedMeResponse(NBM.Plugin.Friend,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Shortly after ProtocolControl.PromptForStrangerHasAddedMe() is called this will be called,
+            after asking the user what to do about when a stranger has added the user to their contact
+            list.
+            </summary>
+            <param name="friend">Stranger who has added the user</param>
+            <param name="message">[optional] Message to be sent by user to stranger</param>
+            <param name="allowUser">True to allow the stranger to see the user's online status</param>
+            <param name="addUser">True to add the stranger to the user's contact list</param>
+        </member>
+        <member name="T:NBM.Plugin.Settings.InternetConnection">
+            <summary>
+            Type of internet connection to use
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.InternetConnection.Direct">
+            <summary>
+            Direct connection - no proxies or anything
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.InternetConnection.Socks4">
+            <summary>
+            SOCKSv4 connection
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.InternetConnection.Socks5">
+            <summary>
+            SOCKSv5 connection
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.InternetConnection.Http">
+            <summary>
+            HTTP proxy server connection
+            </summary>
+        </member>
+        <member name="T:NBM.Plugin.Settings.LogType">
+            <summary>
+            Type of log to create
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.LogType.Text">
+            <summary>
+            Text log
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.LogType.Html">
+            <summary>
+            HTML log
+            </summary>
+        </member>
+        <member name="T:NBM.Plugin.Settings.FriendOnlineEvent">
+            <summary>
+            What happens when a friend comes online
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.FriendOnlineEvent.DoNothing">
+            <summary>
+            Does nothing
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.FriendOnlineEvent.BalloonToolTip">
+            <summary>
+            Balloon tool tip appears above the system tray icon
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.FriendOnlineEvent.MSNPopUp">
+            <summary>
+            MSN-style popup above system tray icon
+            </summary>
+        </member>
+        <member name="T:NBM.Plugin.Settings.FriendMessageEvent">
+            <summary>
+            What happens when a friend messages the user
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.FriendMessageEvent.DoNothing">
+            <summary>
+            Does nothing
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.FriendMessageEvent.FlashWindow">
+            <summary>
+            Flashes the message window
+            </summary>
+        </member>
+        <member name="T:NBM.Plugin.Settings.GlobalSettings">
+            <summary>
+            Global settings. Its a singleton so we can implement from ISettings.
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.LogType">
+            <summary>
+            Type of log to use
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.LoadOnStartup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.AlwaysOnTop">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.HideOfflineContacts">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.ConnectAllOnStartup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.ExitOnX">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.DisplayTaskBar">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.PromptOnExit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.UseProxyAuthentication">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.TimeStampConversations">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.ReconnectOnDisconnection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.SendTypingNotifications">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.ShowEmoticons">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.InternetConnection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.ProxyUsername">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.ProxyPassword">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.ProxyServerHost">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.ProxyServerPort">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.RememberProxyPassword">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.TimeStampFormat">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.ContactListLocation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.ContactListSize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.FriendOnlineEvent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.FriendMessageEvent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.NumTimesToFlashOnMessageReceived">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.PlaySoundOnFriendOnline">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.PlaySoundOnMessageReceived">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.SoundOnFriendOnline">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Settings.GlobalSettings.SoundOnMessageReceived">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.Settings.GlobalSettings.#ctor(IStorage)">
+            <summary>
+            
+            </summary>
+            <param name="storage"></param>
+        </member>
+        <member name="M:NBM.Plugin.Settings.GlobalSettings.Save">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.Settings.GlobalSettings.Load">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.Settings.GlobalSettings.Instance">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.Settings.GlobalSettings.Instance(IStorage)">
+            <summary>
+            
+            </summary>
+            <param name="storage"></param>
+            <returns></returns>
+        </member>
+        <member name="T:NBM.Plugin.Friend">
+            <summary>
+            Represents a friend on a protocol's contact list.
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.Friend.AddListener(NBM.Plugin.IProtocolListener)">
+            <summary>
+            Adds a listener to the friend events
+            </summary>
+            <param name="listener"></param>
+        </member>
+        <member name="M:NBM.Plugin.Friend.RemoveListener(NBM.Plugin.IProtocolListener)">
+            <summary>
+            Removes a listener from the friend events
+            </summary>
+            <param name="listener"></param>
+        </member>
+        <member name="M:NBM.Plugin.Friend.Equals(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.Friend.GetHashCode">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.Friend.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.Friend.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="ctxt"></param>
+        </member>
+        <member name="M:NBM.Plugin.Friend.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="ctxt"></param>
+        </member>
+        <member name="M:NBM.Plugin.Friend.#ctor(System.String,NBM.Plugin.OnlineStatus)">
+            <summary>
+            
+            </summary>
+            <param name="username"></param>
+            <param name="status"></param>
+        </member>
+        <member name="M:NBM.Plugin.Friend.#ctor(System.String,NBM.Plugin.OnlineStatus,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="username"></param>
+            <param name="status"></param>
+            <param name="groupID"></param>
+        </member>
+        <member name="P:NBM.Plugin.Friend.GroupIdentifier">
+            <summary>
+            Plugin-defined group identifier
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.Friend.Blocked">
+            <summary>
+            Blocked flag
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.Friend.DisplayName">
+            <summary>
+            Friend's display name to show on the contact list
+            Will default to the username if this is not assigned
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.Friend.Username">
+            <summary>
+            Friend's username
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.Friend.EmailAddress">
+            <summary>
+            Friend's email address
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.Friend.Status">
+            <summary>
+            Friend's online status
+            </summary>
+        </member>
+        <member name="T:NBM.Config.Constants">
+            <summary>
+            Holds all constants throughout NBM.
+            </summary>
+        </member>
+        <member name="F:NBM.Config.Constants.ProtocolClassName">
+            <summary>
+            Name of protocol class name to create from plugins
+            </summary>
+        </member>
+        <member name="F:NBM.Config.Constants.ConversationClassName">
+            <summary>
+            Name of conversation class name to create from plugins
+            </summary>
+        </member>
+        <member name="F:NBM.Config.Constants.SettingsClassName">
+            <summary>
+            Name of settings class name to create from plugins
+            </summary>
+        </member>
+        <member name="F:NBM.Config.Constants.ConstantsClassName">
+            <summary>
+            Name of constants class name to create from plugins
+            </summary>
+        </member>
+        <member name="F:NBM.Config.Constants.StartupRegistryPath">
+            <summary>
+            Registry key name pointing to where the startup stuff is kept
+            </summary>
+        </member>
+        <member name="M:NBM.Config.Constants.#ctor">
+            <summary>
+            Private constructor as all members are static or const
+            </summary>
+        </member>
+        <member name="F:NBM.Config.Constants.StartupRegistryRoot">
+            <summary>
+            Startup registry root key
+            </summary>
+        </member>
+        <member name="P:NBM.Config.Constants.ImagePath">
+            <summary>
+            Path to images.
+            </summary>
+        </member>
+        <member name="P:NBM.Config.Constants.SoundPath">
+            <summary>
+            Path to sounds.
+            </summary>
+        </member>
+        <member name="P:NBM.Config.Constants.PluginsPath">
+            <summary>
+            Path to plugins.
+            </summary>
+        </member>
+        <member name="P:NBM.Config.Constants.UserDataPath">
+            <summary>
+            Path to user-specific data.
+            </summary>
+        </member>
+        <member name="P:NBM.Config.Constants.LogPath">
+            <summary>
+            Path to keep logs.
+            </summary>
+        </member>
+        <member name="T:NBM.Plugin.Time">
+            <summary>
+            Contains time formatting methods
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.Time.GetFormattedTime">
+            <summary>
+            Returns the formatted time according to the timestamp format passed
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.Time.ConvertDayNumberToName(System.Int32)">
+            <summary>
+            Returns the day name according to the corresponding integer passed
+            </summary>
+            <param name="num">Number of day - must be between zero and six (zero = sunday)</param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.Time.ConvertMonthNumberToName(System.Int32)">
+            <summary>
+            Converts the month number to the corresponding name
+            </summary>
+            <param name="num">Must be between 1 and 12. 1 = january</param>
+            <returns></returns>
+        </member>
+        <member name="T:NBM.Plugin.IOptions">
+            <summary>
+            Interface for options form.
+            Plugins can implement this as many times as they like, one for
+            each "section" on the options form.
+            Each one of these must be added to the arraylist passed to ProtocolSetting's
+            constructor.
+            
+            Every class which implements this interface must also derive from
+            System.Windows.Forms.UserControl
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.IOptions.Save">
+            <summary>
+            Override to save form settings to the appropriate ProtocolSettings class.
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.IOptions.NodeName">
+            <summary>
+            Name to show up on the option's form treeview.
+            </summary>
+        </member>
+        <member name="T:NBM.Plugin.ConversationListenerEnumerator">
+            <summary>
+            Enumerates over ConversationListenerCollection items
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ConversationListenerEnumerator.#ctor(NBM.Plugin.ConversationListenerCollection)">
+            <summary>
+            
+            </summary>
+            <param name="collection"></param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationListenerEnumerator.Reset">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ConversationListenerEnumerator.MoveNext">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ConversationListenerEnumerator.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ConversationListenerEnumerator.System#Collections#IEnumerator#Current">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ConversationListenerEnumerator.Current">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:NBM.Plugin.ConversationListenerCollection">
+            <summary>
+            Contains type-safe and thread-safe access to a ConversationListener collection.
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ConversationListenerCollection.System#ICloneable#Clone">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ConversationListenerCollection.Clone">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ConversationListenerCollection.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ConversationListenerCollection.GetEnumerator">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ConversationListenerCollection.CopyTo(System.Array,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="array"></param>
+            <param name="count"></param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationListenerCollection.System#Collections#IList#Add(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ConversationListenerCollection.Add(NBM.Plugin.IConversationListener)">
+            <summary>
+            
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ConversationListenerCollection.Clear">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ConversationListenerCollection.System#Collections#IList#Contains(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ConversationListenerCollection.Contains(NBM.Plugin.IConversationListener)">
+            <summary>
+            
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ConversationListenerCollection.System#Collections#IList#IndexOf(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ConversationListenerCollection.IndexOf(NBM.Plugin.IConversationListener)">
+            <summary>
+            
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ConversationListenerCollection.System#Collections#IList#Insert(System.Int32,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <param name="o"></param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationListenerCollection.Insert(System.Int32,NBM.Plugin.IConversationListener)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <param name="o"></param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationListenerCollection.System#Collections#IList#Remove(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="o"></param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationListenerCollection.Remove(NBM.Plugin.IConversationListener)">
+            <summary>
+            
+            </summary>
+            <param name="o"></param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationListenerCollection.RemoveAt(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="P:NBM.Plugin.ConversationListenerCollection.Count">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ConversationListenerCollection.IsSynchronized">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ConversationListenerCollection.SyncRoot">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ConversationListenerCollection.IsFixedSize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ConversationListenerCollection.IsReadOnly">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ConversationListenerCollection.System#Collections#IList#Item(System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ConversationListenerCollection.Item(System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:NBM.Plugin.ConversationServer">
+            <summary>
+            Provides an observer for the "server side" - ie the UI side of NBM
+            for conversations. This is not used by plugins.
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ConversationServer.#ctor(NBM.Plugin.ProtocolServer)">
+            <summary>
+            Constructs a ConversationServer
+            </summary>
+            <param name="protocolServer">Protocol server to attach to</param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationServer.OnConnected">
+            <summary>
+            Occurs when the conversation connects
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ConversationServer.OnDisconnected">
+            <summary>
+            Occurs when the conversation disconnects
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ConversationServer.AddListener(NBM.Plugin.IConversationListener)">
+            <summary>
+            Add an observer to the conversation server
+            </summary>
+            <param name="listener"></param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationServer.RemoveListener(NBM.Plugin.IConversationListener)">
+            <summary>
+            Remove an observer from the conversation server
+            </summary>
+            <param name="listener"></param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationServer.FriendSay(System.String,System.String)">
+            <summary>
+            A friend in the conversation has just said something
+            </summary>
+            <param name="username">Friend's username</param>
+            <param name="text">Message said</param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationServer.FriendSay(NBM.Plugin.Friend,System.String)">
+            <summary>
+            A friend in the conversation has just said something
+            </summary>
+            <param name="friend">Friend</param>
+            <param name="text">Message said</param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationServer.FriendJoin(System.String)">
+            <summary>
+            A friend has just joined the conversation
+            </summary>
+            <param name="username">Username of friend</param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationServer.FriendJoin(NBM.Plugin.Friend)">
+            <summary>
+            A friend has just joined the conversation
+            </summary>
+            <param name="friend">Friend</param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationServer.FriendLeave(System.String)">
+            <summary>
+            Friend has just left the conversation
+            </summary>
+            <param name="username">Username of friend who has left</param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationServer.FriendLeave(NBM.Plugin.Friend)">
+            <summary>
+            Friend has just left the conversation
+            </summary>
+            <param name="friend">Friend</param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationServer.TypingNotification(System.String)">
+            <summary>
+            Typing notification received by plugin
+            </summary>
+            <param name="username">Username of typer</param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationServer.TypingNotification(NBM.Plugin.Friend)">
+            <summary>
+            Typing notification received by plugin
+            </summary>
+            <param name="friend">Friend typing</param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationServer.CreateConnection">
+            <summary>
+            Creates a proxy connection
+            </summary>
+            <returns>Connection to use</returns>
+        </member>
+        <member name="M:NBM.Plugin.ConversationServer.UserSay(System.String)">
+            <summary>
+            Occurs when the user has said something
+            </summary>
+            <param name="text">Message to send to conversation</param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationServer.FileSendInvitation(NBM.Plugin.Friend,System.String)">
+            <summary>
+            When a file invitation is received by another party
+            </summary>
+            <param name="friend">Friend who's sending the file</param>
+            <param name="filename">Filename of file</param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationServer.FileSendInvitation(System.String,System.String)">
+            <summary>
+            Call this when a file transfer invitation is received by someone else
+            </summary>
+            <param name="username">Friend who's sending the file</param>
+            <param name="filename">Filename</param>
+        </member>
+        <member name="T:NBM.Plugin.ConversationControl">
+            <summary>
+            This is passed to the implemented IConversation's constructor.
+            Classes that implement IConversation use this class to raise events, e.g.
+            like a friend speaking or another user joining the conversation.
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ConversationControl.#ctor(NBM.Plugin.ConversationServer)">
+            <summary>
+            Constructs a ConversationControl.
+            </summary>
+            <param name="server">ConversationServer to pass events onto</param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationControl.FriendSay(System.String,System.String)">
+            <summary>
+            Call when another user says something in the conversation
+            </summary>
+            <param name="username"></param>
+            <param name="text"></param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationControl.FriendSay(NBM.Plugin.Friend,System.String)">
+            <summary>
+            Call when another user says something in the conversation
+            </summary>
+            <param name="friend"></param>
+            <param name="text"></param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationControl.FriendJoin(System.String)">
+            <summary>
+            Call when a someone joins the conversation
+            </summary>
+            <param name="username"></param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationControl.FriendJoin(NBM.Plugin.Friend)">
+            <summary>
+            Call when a friend joins the conversation
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationControl.FriendLeave(System.String)">
+            <summary>
+            Call when a friend leaves the conversation
+            </summary>
+            <param name="username"></param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationControl.FriendLeave(NBM.Plugin.Friend)">
+            <summary>
+            Call when a friend leaves the conversation
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationControl.TypingNotification(System.String)">
+            <summary>
+            Call when a friend is typing
+            </summary>
+            <param name="username">Name of friend typing</param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationControl.TypingNotification(NBM.Plugin.Friend)">
+            <summary>
+            Call when a friend is typing
+            </summary>
+            <param name="friend">Friend who is typing</param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationControl.CreateConnection">
+            <summary>
+            Creates a Proxy connection. Use this for all network connections.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ConversationControl.FileSendInvitation(NBM.Plugin.Friend,System.String)">
+            <summary>
+            Call this when a file transfer invitation is received by someone else
+            </summary>
+            <param name="friend">Friend who's sending the file</param>
+            <param name="filename">Filename</param>
+        </member>
+        <member name="M:NBM.Plugin.ConversationControl.FileSendInvitation(System.String,System.String)">
+            <summary>
+            Call this when a file transfer invitation is received by someone else
+            </summary>
+            <param name="username">Friend who's sending the file</param>
+            <param name="filename">Filename</param>
+        </member>
+        <member name="T:NBM.Plugin.CircularStream">
+            <summary>
+            Provides a self-expanding circular buffer.
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.CircularStream.#ctor">
+            <summary>
+            Constructs a circular buffer of default size
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.CircularStream.#ctor(System.Int32)">
+            <summary>
+            Constructs a circular buffer of specified initial size
+            </summary>
+            <param name="size"></param>
+        </member>
+        <member name="M:NBM.Plugin.CircularStream.Flush">
+            <summary>
+            Does nothing
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.CircularStream.Seek(System.Int64,System.IO.SeekOrigin)">
+            <summary>
+            Not supported - cannot seek in a circular buffer
+            </summary>
+            <param name="offset"></param>
+            <param name="origin"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.CircularStream.SetLength(System.Int64)">
+            <summary>
+            Sets the length of the circular buffer. Will truncate if length is 
+            shorter than the size of the buffer
+            </summary>
+            <param name="length"></param>
+        </member>
+        <member name="M:NBM.Plugin.CircularStream.Read(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.CircularStream.Read(System.Byte[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.CircularStream.Read(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <param name="offset"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.CircularStream.Write(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:NBM.Plugin.CircularStream.Write(System.Byte[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <param name="length"></param>
+        </member>
+        <member name="M:NBM.Plugin.CircularStream.Write(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <param name="offset"></param>
+            <param name="length"></param>
+        </member>
+        <member name="P:NBM.Plugin.CircularStream.DataAvailable">
+            <summary>
+            Number of bytes that are available to read
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.CircularStream.CanRead">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.CircularStream.CanWrite">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.CircularStream.CanSeek">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.CircularStream.Length">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.CircularStream.Position">
+            <summary>
+            Not supported - a circular buffer does not have any positions!
+            </summary>
+        </member>
+        <member name="T:NBM.Plugin.Pair">
+            <summary>
+            Very simple - just stores a pair of objects.
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Pair.First">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.Pair.Second">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.Pair.#ctor">
+            <summary>
+            Constructs a pair with null as the default values
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.Pair.#ctor(System.Object,System.Object)">
+            <summary>
+            Constructs a pair with the specified object values.
+            </summary>
+            <param name="first"></param>
+            <param name="second"></param>
+        </member>
+        <member name="T:XmlStorage">
+            <summary>
+            Stores key-value configuration pairs in an xml file.
+            </summary>
+        </member>
+        <member name="M:XmlStorage.#ctor(XmlStorage,System.String)">
+            <summary>
+            Constructs an XmlStorage.
+            This is used to create sub-sections
+            </summary>
+            <param name="root">Root XmlStorage instance</param>
+            <param name="name">Name of subsection</param>
+        </member>
+        <member name="M:XmlStorage.#ctor(XmlStorage,System.String,System.Xml.XmlTextReader)">
+            <summary>
+            Constructs an XmlStorage.
+            This is used to create sub-sections
+            </summary>
+            <param name="root">Root XmlStorage instance</param>
+            <param name="name">Name of subsection</param>
+            <param name="reader">Xml reader to read elements from</param>
+        </member>
+        <member name="M:XmlStorage.ReadElements(System.Xml.XmlTextReader)">
+            <summary>
+            Reads the xml elements from the reader and stores them in the hashtable
+            </summary>
+            <param name="reader"></param>
+        </member>
+        <member name="M:XmlStorage.#ctor(System.String)">
+            <summary>
+            Constructs an XmlStorage class
+            </summary>
+            <param name="fileName">Xml file to use</param>
+        </member>
+        <member name="M:XmlStorage.Close">
+            <summary>
+            Closes the Xml file
+            </summary>
+        </member>
+        <member name="M:XmlStorage.Flush">
+            <summary>
+            Flushes the hashtable to the xml file
+            </summary>
+        </member>
+        <member name="M:XmlStorage.WriteElements(System.Xml.XmlTextWriter)">
+            <summary>
+            Writes elements to an xml writer
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:XmlStorage.IStorage#CreateSubSection(System.String)">
+            <summary>
+            Creates a subsection
+            </summary>
+        </member>
+        <member name="M:XmlStorage.CreateSubSection(System.String)">
+            <summary>
+            Creates an Xml subsection
+            </summary>
+            <param name="name">Name of subsection</param>
+            <returns></returns>
+        </member>
+        <member name="M:XmlStorage.Write(System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="val"></param>
+        </member>
+        <member name="M:XmlStorage.Write(System.String,System.Char)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="val"></param>
+        </member>
+        <member name="M:XmlStorage.Write(System.String,System.Byte)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="val"></param>
+        </member>
+        <member name="M:XmlStorage.Write(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="val"></param>
+        </member>
+        <member name="M:XmlStorage.Write(System.String,System.Single)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="val"></param>
+        </member>
+        <member name="M:XmlStorage.Write(System.String,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="val"></param>
+        </member>
+        <member name="M:XmlStorage.Write(System.String,System.Int16)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="val"></param>
+        </member>
+        <member name="M:XmlStorage.Write(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="val"></param>
+        </member>
+        <member name="M:XmlStorage.Write(System.String,System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="val"></param>
+        </member>
+        <member name="M:XmlStorage.Write(System.String,System.UInt16)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="val"></param>
+        </member>
+        <member name="M:XmlStorage.Write(System.String,System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="val"></param>
+        </member>
+        <member name="M:XmlStorage.Write(System.String,System.UInt64)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="val"></param>
+        </member>
+        <member name="M:XmlStorage.ReadBool(System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="def"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XmlStorage.ReadChar(System.String,System.Char)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="def"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XmlStorage.ReadByte(System.String,System.Byte)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="def"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XmlStorage.ReadString(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="def"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XmlStorage.ReadSingle(System.String,System.Single)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="def"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XmlStorage.ReadDouble(System.String,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="def"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XmlStorage.ReadInt16(System.String,System.Int16)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="def"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XmlStorage.ReadInt32(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="def"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XmlStorage.ReadInt64(System.String,System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="def"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XmlStorage.ReadUInt16(System.String,System.UInt16)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="def"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XmlStorage.ReadUInt32(System.String,System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="def"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XmlStorage.ReadUInt64(System.String,System.UInt64)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="def"></param>
+            <returns></returns>
+        </member>
+        <member name="T:NBM.Plugin.ProtocolSettings">
+            <summary>
+            Base class for all protocol settings.
+            Plugins dont have to derive from this class if they dont have
+            any settings to save
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolSettings.#ctor(NBM.Plugin.IConstants,IStorage,System.Collections.ArrayList)">
+            <summary>
+            Constructs a ProtocolSettings
+            </summary>
+            <param name="constants"></param>
+            <param name="storage"></param>
+            <param name="optionsList"></param>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolSettings.Load">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolSettings.Save">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ProtocolSettings.GetHashCode">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:NBM.Plugin.ProtocolSettings.Constants">
+            <summary>
+            Constants object associated with settings
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ProtocolSettings.Enabled">
+            <summary>
+            True if the protocol is enabled, false otherwise.
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ProtocolSettings.Username">
+            <summary>
+            User's username
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ProtocolSettings.Password">
+            <summary>
+            User's password
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ProtocolSettings.RememberPassword">
+            <summary>
+            True if the password is to be saved
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ProtocolSettings.DisplayName">
+            <summary>
+            Displayname of user
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ProtocolSettings.ServerHost">
+            <summary>
+            Server to connect to
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ProtocolSettings.ServerPort">
+            <summary>
+            Server port to connect to
+            </summary>
+        </member>
+        <member name="P:NBM.Plugin.ProtocolSettings.Status">
+            <summary>
+            Status of user
+            </summary>
+        </member>
+        <member name="T:NBM.Plugin.ConnectionFailedReport">
+            <summary>
+            Reason why the connection failed
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.ConnectionFailedReport.ConnectionFailed">
+            <summary>
+            I dunno
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.ConnectionFailedReport.AuthFailed">
+            <summary>
+            Authentication failed
+            </summary>
+        </member>
+        <member name="F:NBM.Plugin.ConnectionFailedReport.InvalidProtocol">
+            <summary>
+            Protocol used by server is unrecognised by client
+            </summary>
+        </member>
+        <member name="T:NBM.Plugin.ConnectionCompleteArgs">
+            <summary>
+            Special arguments for connection.
+            Plugins must use this as an argument to OperationCompleteEvent.Execute()
+            on IProtocol.Connect() 
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ConnectionCompleteArgs.CreateErrorMessage(NBM.Plugin.ConnectionFailedReport)">
+            <summary>
+            Generates an appropriate error message
+            </summary>
+            <param name="report"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.Plugin.ConnectionCompleteArgs.#ctor">
+            <summary>
+            Constructs a ConnectionCompleteArgs reporting the connection was successful
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.ConnectionCompleteArgs.#ctor(NBM.Plugin.ConnectionFailedReport)">
+            <summary>
+            Constructs a ConnectionCompleteArgs reporting the connection failed
+            </summary>
+            <param name="report"></param>
+        </member>
+        <member name="P:NBM.Plugin.ConnectionCompleteArgs.Report">
+            <summary>
+            Why the connection failed
+            </summary>
+        </member>
+        <member name="T:NBM.Plugin.IConversation">
+            <summary>
+            All conversation plugin implementations implement this interface.
+            </summary>
+        </member>
+        <member name="M:NBM.Plugin.IConversation.Start(NBM.Plugin.Friend,NBM.Plugin.OperationCompleteEvent)">
+            <summary>
+            Called when we want to start the conversation
+            </summary>
+            <param name="friend">Original friend who we want to talk to</param>
+            <param name="opCompleteEvent"></param>
+        </member>
+        <member name="M:NBM.Plugin.IConversation.StartByInvitation(NBM.Plugin.Friend,NBM.Plugin.OperationCompleteEvent,System.Object)">
+            <summary>
+            This is called soon after the plugin initiates a conversation through
+            ProtocolControl.StartConversation()
+            </summary>
+            <param name="friend">Friend who initiated the conversation</param>
+            <param name="opCompleteEvent"></param>
+            <param name="tag">Plugin-defined object</param>
+        </member>
+        <member name="M:NBM.Plugin.IConversation.End(NBM.Plugin.OperationCompleteEvent)">
+            <summary>
+            Called when the conversation ends.
+            </summary>
+            <param name="opCompleteEvent"></param>
+        </member>
+        <member name="M:NBM.Plugin.IConversation.Say(System.String,NBM.Plugin.OperationCompleteEvent)">
+            <summary>
+            Called when the user says something.
+            </summary>
+            <param name="text">Message to say</param>
+            <param name="opCompleteEvent"></param>
+        </member>
+        <member name="M:NBM.Plugin.IConversation.InviteFriend(NBM.Plugin.Friend,NBM.Plugin.OperationCompleteEvent)">
+            <summary>
+            Called when the user wants to invite a friend to the conversation.
+            </summary>
+            <param name="friend">Friend to invite</param>
+            <param name="opCompleteEvent"></param>
+        </member>
+        <member name="M:NBM.Plugin.IConversation.SendTypingNotification(NBM.Plugin.OperationCompleteEvent)">
+            <summary>
+            Called when the user is typing. This is not called if typing notifications are turned
+            off in the options
+            </summary>
+            <param name="opCompleteEvent"></param>
+        </member>
+        <member name="M:NBM.Plugin.IConversation.SendFile(System.IO.Stream,NBM.Plugin.OperationCompleteEvent)">
+            <summary>
+            Called when the user wants to send a file.
+            </summary>
+            <param name="stream">Data stream to send</param>
+            <param name="opCompleteEvent"></param>
+        </member>
+    </members>
+</doc>

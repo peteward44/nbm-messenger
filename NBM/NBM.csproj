@@ -1,0 +1,246 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{96EFE62B-DD36-46E7-9484-896A380FED32}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>nbm.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>NBM</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>NBM</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>nbm.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\Plugin\Plugin.csproj">
+      <Name>Plugin</Name>
+      <Project>{7C9FD46C-45A3-4E94-A0FF-8B265D369185}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\TreeNodeEx\TreeViewEx.csproj">
+      <Name>TreeViewEx</Name>
+      <Project>{7E46B9B8-1791-4FB9-AE66-6B737C090187}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClassFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Diagnostics\ConversationReporter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Diagnostics\Debug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diagnostics\ProtocolReporter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntryPoint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Log.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NativeMethods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Options\BasicOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Options\BasicProtocolOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Options\ConnectionOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Options\ConversationOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Options\EventOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Options\OptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Protocol.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\AddFriendForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AuthFailedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BugReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ContactTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ConversationBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\FriendMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\FriendTreeNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\OfflineTreeNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\OnFriendAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ProtocolMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ProtocolTreeNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\StatusMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\SysTrayContextMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\SysTrayIcon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\TaskbarNotifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Diagnostics\Debug.resx">
+      <DependentUpon>Debug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nbm.ico" />
+    <EmbeddedResource Include="Options\BasicOptions.resx">
+      <DependentUpon>BasicOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\BasicProtocolOptions.resx">
+      <DependentUpon>BasicProtocolOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\ConnectionOptions.resx">
+      <DependentUpon>ConnectionOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\ConversationOptions.resx">
+      <DependentUpon>ConversationOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\EventOptions.resx">
+      <DependentUpon>EventOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\OptionsForm.resx">
+      <DependentUpon>OptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AddFriendForm.resx">
+      <DependentUpon>AddFriendForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AuthFailedForm.resx">
+      <DependentUpon>AuthFailedForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BugReportForm.resx">
+      <DependentUpon>BugReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MessageForm.resx">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\OnFriendAddForm.resx">
+      <DependentUpon>OnFriendAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,503 @@
+User changed status
+Connection begun
+-----------------------------------------
+Sent
+VER 0 MSNP8 CVR0
+
+-----------------------------------------
+-----------------------------------------
+Received
+VER 0 MSNP8 CVR0
+
+-----------------------------------------
+-----------------------------------------
+Sent
+CVR 1 0x0409 winnt 5.1 i386 MSMSGS 4.7.2009 WindowsMessenger pete@pragmaone.com
+
+-----------------------------------------
+-----------------------------------------
+Received
+CVR 1 4.7.2009 4.7.2009 4.7.2009 http://download.microsoft.com/download/4/4/0/44035C82-FEFC-49BB-965F-A20DF645AD0B/mmssetup.exe http://messenger.microsoft.com
+
+-----------------------------------------
+-----------------------------------------
+Sent
+USR 2 TWN I pete@pragmaone.com
+
+-----------------------------------------
+-----------------------------------------
+Received
+XFR 2 NS 207.46.106.154:1863 0 207.46.104.20:1863
+
+-----------------------------------------
+-----------------------------------------
+Sent
+VER 3 MSNP8 CVR0
+
+-----------------------------------------
+-----------------------------------------
+Received
+VER 3 MSNP8 CVR0
+
+-----------------------------------------
+-----------------------------------------
+Sent
+CVR 4 0x0409 winnt 5.1 i386 MSMSGS 4.7.2009 WindowsMessenger pete@pragmaone.com
+
+-----------------------------------------
+-----------------------------------------
+Received
+CVR 4 4.7.2009 4.7.2009 4.7.2009 http://download.microsoft.com/download/4/4/0/44035C82-FEFC-49BB-965F-A20DF645AD0B/mmssetup.exe http://messenger.microsoft.com
+
+-----------------------------------------
+-----------------------------------------
+Sent
+USR 5 TWN I pete@pragmaone.com
+
+-----------------------------------------
+-----------------------------------------
+Received
+USR 5 TWN S lc=1033,id=507,tw=40,fs=1,ru=http%3A%2F%2Fmessenger%2Emsn%2Ecom,ct=1065803321,kpp=1,kv=5,ver=2.1.0173.1,tpf=fdf7cb0807c99e745d5cae4728a25b3a
+
+-----------------------------------------
+-----------------------------------------
+Sent
+USR 6 TWN S t=5pCUiaLNbDrDcu72tGh21VOCglH12Z388Ou0lJ2!LzjRGNK3s2*u0NLQsAVGaAm8bD6jzZtUJN5TS5MNjjP1!obw$$&p=58R448b71FVyHRRSO0hsNKrhMD6xX11gwIDuWvfp1EapNzvgI*24O*jKRHwIrhFPizyT1qwmJFQYbAOKJHUFealZbqoBfZcHg56LsVw8Oqp45ajggin18RaJ7C7RYk3oq5*3bAypu85l0zMX5RSEc6DfG6g44DA8ZsZc2yL6Imclr2FdAEwzVsgQ$$
+
+-----------------------------------------
+-----------------------------------------
+Received
+USR 6 OK pete@pragmaone.com sark 1 0
+
+-----------------------------------------
+-----------------------------------------
+Sent
+CHG 7 HDN
+
+-----------------------------------------
+-----------------------------------------
+Received
+MSG Hotmail Hotmail 438
+MIME-Version: 1.0
+Content-Type: text/x-msmsgsprofile; charset=UTF-8
+EmailEnabled: 0
+MemberIdHigh: 245757
+MemberIdLow: -2141934551
+lang_preference: 2057
+preferredEmail: 
+country: UK
+PostalCode: 
+Gender: 
+Kid: 0
+Age: 
+BDayPre: 
+Birthday: 
+Wallet: 
+Flags: 1537
+sid: 507
+kv: 5
+MSPAuth: 5pCUiaLNbDrDcu72tGh21VOCglH12Z388Ou0lJ2!LzjRGNK3s2*u0NLQsAVGaAm8bD6jzZtUJN5TS5MNjjP1!obw$$
+ClientIP: 62.137.98.138
+ClientPort: 63408
+
+
+-----------------------------------------
+-----------------------------------------
+Received
+CHG 7 HDN 0
+
+-----------------------------------------
+-----------------------------------------
+Sent
+SYN 8 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+ILN 7 IDL besigedb@hotmail.com (&)%20Andrew 268435500
+
+-----------------------------------------
+Contact added: besigedb@hotmail.com
+-----------------------------------------
+Received
+ILN 7 NLN hmcorlett@hotmail.com Helen 268435508
+
+-----------------------------------------
+Contact added: hmcorlett@hotmail.com
+-----------------------------------------
+Received
+ILN 7 IDL thenewgalaxy@hotmail.com Link 268435492
+
+-----------------------------------------
+Contact added: thenewgalaxy@hotmail.com
+-----------------------------------------
+Received
+ILN 7 NLN smarterchild@hotmail.com smarterchild@hotmail.com 0
+
+-----------------------------------------
+Contact added: smarterchild@hotmail.com
+-----------------------------------------
+Received
+SYN 8 2225 37 1
+
+-----------------------------------------
+-----------------------------------------
+Received
+GTC A
+
+-----------------------------------------
+-----------------------------------------
+Received
+BLP AL
+
+-----------------------------------------
+-----------------------------------------
+Received
+LSG 0 Other%20Contacts 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST boyusmaximus79@hotmail.com Boyusmaximus 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+BPR PHW 49%208960882431
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST kissmygates@hotmail.com Germaine%20(License%20this%20u%20little....) 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST gaz10000@hotmail.com Gasman%20-%20Rah!!! 3 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST dingo_the_redeemer@hotmail.com ? 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST msn@bubnet.co.uk shiAkt 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST cancancross@hotmail.com Matthew 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST hmcorlett@hotmail.com Helen 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST bubbydabeefcake@hotmail.com Andrew 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+BPR PHM 44%2007950879051
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST ban_ri@hotmail.com Angels%20Irish%20Gal 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST new_uk_buffy@hotmail.com Kitty%20%2D%20Feeling%20Tetchy 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST smarterchild@hotmail.com smarterchild@hotmail.com 3 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST margaretward49@hotmail.com Margaret 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST thenewgalaxy@hotmail.com Link 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+BPR PHM 44%207739161604
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST twistedspring@hotmail.com Weevil 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST hoppysmailbag@btinternet.com JaggedLittleWill 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST superbugaboo@hotmail.com Ant 3 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST sephrenia@hotmail.com sephrenia@hotmail.com 1 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST douglascbrown@hotmail.com Doug.de 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST wiccagirluk@hotmail.com Taz%20<-%20To%20err%20is%20human,%20to%20forgive%20divine.%20Do%20I%20look%20like%20a%20fucking%20god?!?%20-> 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+BPR PHH 44%202084594041
+
+-----------------------------------------
+-----------------------------------------
+Received
+BPR PHW 44%202082021199
+
+-----------------------------------------
+-----------------------------------------
+Received
+BPR PHM 44%207736036361
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST besigedb@hotmail.com (&)%20Andrew 3 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+BPR PHH 44%200
+
+-----------------------------------------
+-----------------------------------------
+Received
+BPR PHW 44%200
+
+-----------------------------------------
+-----------------------------------------
+Received
+BPR PHM 44%200
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST simonzargar@hotmail.com Z%20i%20G 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+BPR PHM 44%2007929546008
+
+-----------------------------------------
+-----------------------------------------
+Received
+BPR MOB Y
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST hayth123@hotmail.com Hayth%20%2D%20Thank%20you%20H%20%28K%29 4
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST im_a_test_1993@hotmail.com im_a_test_1993@hotmail.com 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST the_snow_nymph@hotmail.com the_snow_nymph@hotmail.com 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST lickcheeseman@hotmail.com Milk%20it 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+BPR PHH 44%2001216242933
+
+-----------------------------------------
+-----------------------------------------
+Received
+BPR PHM 44%2007817777231
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST d@dmz.me.uk DM 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST blakmajk666@hotmail.com Tom 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+BPR MOB Y
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST andrew@aphore.com Andrew 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST gate_crasheruk@hotmail.com gate_crasheruk@hotmail.com 4
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST jenjenrrr711@hotmail.com ~Jen~ 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+BPR PHH 1%20-567-4584
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST kotchos1983@hotmail.com Kip. 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+BPR PHH 44%201214728395
+
+-----------------------------------------
+-----------------------------------------
+Received
+BPR PHW 44%202920215681
+
+-----------------------------------------
+-----------------------------------------
+Received
+BPR PHM 44%207815044832
+
+-----------------------------------------
+-----------------------------------------
+Received
+BPR MOB Y
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST pete@pragmaone.com pete@pragmaone.com 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST barbara_doll16@hotmail.com Coz%20every%20time%20you%20leave%20i%20stand%20inside%20my%20house%20distraught 3 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST prometheus_1981@excite.com Mikey%20Boy:%20Un-Fucking-believalbe! 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST beef@qnps.com Andrew 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST stuarttrotman@hotmail.com Stu 11 0
+
+-----------------------------------------
+-----------------------------------------
+Received
+BPR PHM 44%207817514126
+
+-----------------------------------------
+-----------------------------------------
+Received
+BPR MOB Y
+
+-----------------------------------------
+-----------------------------------------
+Received
+LST skylar00500@hotmail.com Hannah%20-%20Because%20i'm%20just%20a%20little%20girl%20you%20see 10
+
+-----------------------------------------
+Contact added: boyusmaximus79@hotmail.com
+Contact added: kissmygates@hotmail.com
+Contact added: gaz10000@hotmail.com
+Contact added: dingo_the_redeemer@hotmail.com
+Contact added: msn@bubnet.co.uk
+Contact added: cancancross@hotmail.com
+Contact added: bubbydabeefcake@hotmail.com
+Contact added: ban_ri@hotmail.com
+Contact added: new_uk_buffy@hotmail.com
+Contact added: margaretward49@hotmail.com
+Contact added: twistedspring@hotmail.com
+Contact added: hoppysmailbag@btinternet.com
+Contact added: superbugaboo@hotmail.com
+Contact added: sephrenia@hotmail.com
+Contact added: douglascbrown@hotmail.com
+Contact added: wiccagirluk@hotmail.com
+Contact added: simonzargar@hotmail.com
+Contact added: im_a_test_1993@hotmail.com
+Contact added: the_snow_nymph@hotmail.com
+Contact added: lickcheeseman@hotmail.com
+Contact added: d@dmz.me.uk
+Contact added: blakmajk666@hotmail.com
+Contact added: andrew@aphore.com
+Contact added: jenjenrrr711@hotmail.com
+Contact added: kotchos1983@hotmail.com
+Contact added: pete@pragmaone.com
+Contact added: barbara_doll16@hotmail.com
+Contact added: prometheus_1981@excite.com
+Contact added: beef@qnps.com
+Contact added: stuarttrotman@hotmail.com
+Connection completed
+-----------------------------------------
+Received
+NLN NLN besigedb@hotmail.com (&)%20Andrew 268435500
+
+-----------------------------------------
+Contact changed status: besigedb@hotmail.com
+-----------------------------------------
+Sent
+OUT
+
+-----------------------------------------
+Disconnected, forced : False
+------------
+-----------------------------------------
+Received
+QNG
+
+-----------------------------------------
+-----------------------------------------
+Sent
+OUT
+
+-----------------------------------------
+Disconnected, forced : False

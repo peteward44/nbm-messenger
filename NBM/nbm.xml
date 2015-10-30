@@ -1,0 +1,2688 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NBM</name>
+    </assembly>
+    <members>
+        <member name="T:NBM.SysTrayIcon">
+            <summary>
+            System tray icon.
+            </summary>
+        </member>
+        <member name="M:NBM.SysTrayIcon.#ctor(NBM.MainForm,System.Drawing.Icon)">
+            <summary>
+            Constructs a system tray icon
+            </summary>
+            <param name="mainForm"></param>
+            <param name="icon"></param>
+        </member>
+        <member name="M:NBM.SysTrayIcon.OnSysTrayClick(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.SysTrayIcon.Finalize">
+            <summary>
+            Destructor / Finalizer
+            </summary>
+        </member>
+        <member name="M:NBM.SysTrayIcon.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.SysTrayIcon.Visible">
+            <summary>
+            Visible flag
+            </summary>
+        </member>
+        <member name="T:NBM.FriendMenu">
+            <summary>
+            Context menu shown when you right-click on a friend's name.
+            </summary>
+        </member>
+        <member name="M:NBM.FriendMenu.#ctor(NBM.Protocol,NBM.Plugin.Friend)">
+            <summary>
+            Constructs a friend menu.
+            </summary>
+            <param name="protocol">Associated protocol</param>
+            <param name="friend">Associated friend</param>
+        </member>
+        <member name="M:NBM.FriendMenu.menuItemRemove_Click(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.FriendMenu.menuItemBlock_Click(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:NBM.OptionNodes.BasicOptions">
+            <summary>
+            Provides basic options
+            </summary>
+        </member>
+        <member name="F:NBM.OptionNodes.BasicOptions.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:NBM.OptionNodes.BasicOptions.#ctor">
+            <summary>
+            Constructs a BasicOptions
+            </summary>
+        </member>
+        <member name="M:NBM.OptionNodes.BasicOptions.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:NBM.OptionNodes.BasicOptions.Save">
+            <summary>
+            Saves the options into memory
+            </summary>
+        </member>
+        <member name="M:NBM.OptionNodes.BasicOptions.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:NBM.OptionNodes.BasicOptions.NodeName">
+            <summary>
+            Name of node
+            </summary>
+        </member>
+        <member name="T:NBM.OptionNodes.ConversationOptions">
+            <summary>
+            Conversation options - options for conversations. (emoticons and other crap)
+            </summary>
+        </member>
+        <member name="F:NBM.OptionNodes.ConversationOptions.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:NBM.OptionNodes.ConversationOptions.#ctor">
+            <summary>
+            Constructs a ConversationOptions
+            </summary>
+        </member>
+        <member name="M:NBM.OptionNodes.ConversationOptions.Save">
+            <summary>
+            Save settings
+            </summary>
+        </member>
+        <member name="M:NBM.OptionNodes.ConversationOptions.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:NBM.OptionNodes.ConversationOptions.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:NBM.OptionNodes.ConversationOptions.timeStampCheckBox_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:NBM.OptionNodes.ConversationOptions.NodeName">
+            <summary>
+            Name of node
+            </summary>
+        </member>
+        <member name="T:NBM.ILog">
+            <summary>
+            Provides base interface for message and event logging
+            </summary>
+        </member>
+        <member name="T:NBM.LogFactory">
+            <summary>
+            Generates appropriate ILog implementor depending on user settings.
+            </summary>
+        </member>
+        <member name="M:NBM.LogFactory.CreateLog(NBM.Protocol,System.String)">
+            <summary>
+            Generates appropriate ILog implementor depending on user settings.
+            </summary>
+            <param name="protocol">Appropriate protocol</param>
+            <param name="friendName">Original friend within the conversation</param>
+            <returns></returns>
+        </member>
+        <member name="T:NBM.PlainTextLog">
+            <summary>
+            Plain text conversation logging.
+            </summary>
+        </member>
+        <member name="M:NBM.PlainTextLog.#ctor(NBM.Protocol,System.String)">
+            <summary>
+            Constructs a PlainTextLog
+            </summary>
+            <param name="protocol">Protocol to log</param>
+            <param name="friendName">Friend's name of conversation</param>
+        </member>
+        <member name="M:NBM.PlainTextLog.Dispose">
+            <summary>
+            Disposes the object
+            </summary>
+        </member>
+        <member name="M:NBM.PlainTextLog.OnConversationConnected">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.PlainTextLog.OnConversationDisconnected">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.PlainTextLog.OnUserSay(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:NBM.PlainTextLog.OnFriendSay(NBM.Plugin.Friend,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="text"></param>
+        </member>
+        <member name="M:NBM.PlainTextLog.OnFriendJoin(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.PlainTextLog.OnFriendLeave(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.PlainTextLog.OnTypingNotification(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.PlainTextLog.OnFileSendInvitation(NBM.Plugin.Friend,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="filename"></param>
+        </member>
+        <member name="T:NBM.HtmlLog">
+            <summary>
+            HTML logging
+            </summary>
+        </member>
+        <member name="M:NBM.HtmlLog.#ctor(NBM.Protocol,System.String)">
+            <summary>
+            Constructs HtmlLog
+            </summary>
+            <param name="protocol">Protocol to log</param>
+            <param name="friendName">Friend's name</param>
+        </member>
+        <member name="M:NBM.HtmlLog.Dispose">
+            <summary>
+            Disposes the object
+            </summary>
+        </member>
+        <member name="M:NBM.HtmlLog.OnConversationConnected">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.HtmlLog.OnConversationDisconnected">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.HtmlLog.OnFriendSay(NBM.Plugin.Friend,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="text"></param>
+        </member>
+        <member name="M:NBM.HtmlLog.OnFriendJoin(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.HtmlLog.OnFriendLeave(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.HtmlLog.OnTypingNotification(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.HtmlLog.OnUserSay(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:NBM.HtmlLog.OnFileSendInvitation(NBM.Plugin.Friend,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="filename"></param>
+        </member>
+        <member name="T:NBM.EntryPoint">
+            <summary>
+            Simply holds the Main() method for the application.
+            </summary>
+        </member>
+        <member name="M:NBM.EntryPoint.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:NBM.ConversationBox">
+            <summary>
+            Text box for conversations. (in the MessageForm)
+            </summary>
+        </member>
+        <member name="M:NBM.ConversationBox.#ctor">
+            <summary>
+            Constructs a ConversationBox.
+            </summary>
+        </member>
+        <member name="M:NBM.ConversationBox.ScrollToBottom">
+            <summary>
+            Scrolls down the box to the bottom.
+            </summary>
+        </member>
+        <member name="M:NBM.ConversationBox.OnLinkClicked(System.Object,System.Windows.Forms.LinkClickedEventArgs)">
+            <summary>
+            When a link is clicked inside the box.
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:NBM.ConversationBox.WriteLineMethod(System.String,System.String,System.Drawing.Color)">
+            <summary>
+            Writes a line to the conversation box. This is Invoke()ed from WriteLine().
+            </summary>
+            <param name="name">Name of the person whos saying something.</param>
+            <param name="text">Text of the message</param>
+            <param name="colour">Colour to write name in.</param>
+        </member>
+        <member name="M:NBM.ConversationBox.WriteLine(System.String,System.String,System.Drawing.Color)">
+            <summary>
+            Writes a line to the conversation box. Automatically handles timestamping and colour etc
+            </summary>
+            <param name="name"></param>
+            <param name="text"></param>
+            <param name="colour"></param>
+        </member>
+        <member name="M:NBM.ConversationBox.WriteEventMethod(System.String)">
+            <summary>
+            Writes an event to the conversation box. This is Invoke()ed from WriteEvent().
+            </summary>
+            <param name="text">Description of the event</param>
+        </member>
+        <member name="M:NBM.ConversationBox.WriteEvent(System.String)">
+            <summary>
+            Writes an event to the conversation box. Handles timestamping and colour etc
+            </summary>
+            <param name="text">Description of the event.</param>
+        </member>
+        <member name="T:NBM.ContactTreeView">
+            <summary>
+            Contact tree view.
+            </summary>
+        </member>
+        <member name="M:NBM.ContactTreeView.#ctor(NBM.MainForm)">
+            <summary>
+            Constructs a contact tree view.
+            </summary>
+            <param name="mainForm"></param>
+        </member>
+        <member name="M:NBM.ContactTreeView.HideOfflineList">
+            <summary>
+            Hide the list of offline contacts.
+            </summary>
+        </member>
+        <member name="M:NBM.ContactTreeView.ShowOfflineList">
+            <summary>
+            Shows the list of offline contacts.
+            </summary>
+        </member>
+        <member name="M:NBM.ContactTreeView.AddProtocols(System.Collections.ArrayList)">
+            <summary>
+            Adds the protocols to the contact list.
+            </summary>
+            <param name="protocols"></param>
+        </member>
+        <member name="M:NBM.ContactTreeView.GetProtocolNode(NBM.Protocol)">
+            <summary>
+            Returns the protocol node assocaited with the protocol passed in
+            </summary>
+            <param name="protocol"></param>
+            <returns></returns>
+        </member>
+        <member name="T:NBM.BugReportForm">
+            <summary>
+            When the program crashes, this form pops up.
+            </summary>
+        </member>
+        <member name="F:NBM.BugReportForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:NBM.BugReportForm.#ctor">
+            <summary>
+            Constructs a bug report form.
+            </summary>
+        </member>
+        <member name="M:NBM.BugReportForm.#ctor(System.Exception)">
+            <summary>
+            Constructs a bug report form.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.BugReportForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:NBM.BugReportForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:NBM.BugReportForm.copyToClipboardButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Copies the error information to the clipboard.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.BugReportForm.submitBugReportButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Submits the bug report information to me.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:NBM.AuthFailedForm">
+            <summary>
+            Form for when authentication fails when trying to connect.
+            </summary>
+        </member>
+        <member name="F:NBM.AuthFailedForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:NBM.AuthFailedForm.#ctor(NBM.Protocol,System.String)">
+            <summary>
+            Constructs an AuthFailedForm.
+            </summary>
+            <param name="protocol">Associated protocol</param>
+            <param name="furtherInformation">Any further information that can be provided</param>
+        </member>
+        <member name="M:NBM.AuthFailedForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:NBM.AuthFailedForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:NBM.AuthFailedForm.loginButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.AuthFailedForm.cancelButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:NBM.Diagnostics.ConversationReporter">
+            <summary>
+            Debug logging for conversations.
+            </summary>
+        </member>
+        <member name="M:NBM.Diagnostics.ConversationReporter.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Diagnostics.ConversationReporter.OnConversationConnected">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Diagnostics.ConversationReporter.OnConversationDisconnected">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Diagnostics.ConversationReporter.OnFriendSay(NBM.Plugin.Friend,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="text"></param>
+        </member>
+        <member name="M:NBM.Diagnostics.ConversationReporter.OnFriendJoin(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Diagnostics.ConversationReporter.OnFriendLeave(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Diagnostics.ConversationReporter.OnTypingNotification(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Diagnostics.ConversationReporter.OnUserSay(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:NBM.Diagnostics.ConversationReporter.OnFileSendInvitation(NBM.Plugin.Friend,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="filename"></param>
+        </member>
+        <member name="T:NBM.OptionsForm">
+            <summary>
+            The main options form.
+            </summary>
+        </member>
+        <member name="F:NBM.OptionsForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:NBM.OptionsForm.#ctor(NBM.MainForm)">
+            <summary>
+            Constructs an OptionsForm.
+            </summary>
+            <param name="mainForm"></param>
+        </member>
+        <member name="M:NBM.OptionsForm.#ctor(NBM.MainForm,NBM.Protocol)">
+            <summary>
+            Constructs an OptionsForm, but starts with the selectedProtocol's options pane.
+            </summary>
+            <param name="mainForm"></param>
+            <param name="selectedProtocol"></param>
+        </member>
+        <member name="M:NBM.OptionsForm.AddNode(System.Windows.Forms.TreeNodeCollection,NBM.Plugin.IOptions)">
+            <summary>
+            Adds an options node to the options tree.
+            </summary>
+            <param name="collection"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.OptionsForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:NBM.OptionsForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:NBM.OptionsForm.okButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.OptionsForm.cancelButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.OptionsForm.applyButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.OptionsForm.SaveAllSettings">
+            <summary>
+            Saves all the settings in each of the option's nodes.
+            </summary>
+        </member>
+        <member name="M:NBM.OptionsForm.OnNodeSelect(System.Object,System.Windows.Forms.TreeViewEventArgs)">
+            <summary>
+            When a treenode is selected, display the options node which is assocaited with it.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:NBM.MessageForm">
+            <summary>
+            Form for conversations. This class pretty much controls everything with conversations.
+            </summary>
+        </member>
+        <member name="F:NBM.MessageForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:NBM.MessageForm.#ctor(NBM.Protocol,NBM.Plugin.Friend)">
+            <summary>
+            Constructs a MessageForm
+            </summary>
+            <param name="protocol">Associated protocol</param>
+            <param name="originalFriend">Initial friend</param>
+        </member>
+        <member name="M:NBM.MessageForm.OnClosed(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.MessageForm.OnSizeChanged(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.MessageForm.OnActivated(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.MessageForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:NBM.MessageForm.Connect(System.Boolean,System.Object,NBM.Plugin.OperationCompleteEvent)">
+            <summary>
+            Connect the conversation up.
+            </summary>
+            <param name="byinvite">True if the conversation was initiated by someone on the contact list, false if the user clicked on the name</param>
+            <param name="tag">If the conversation was started by someone on the contact list, this is a plugin-defined object</param>
+            <param name="opCompleteEvent"></param>
+        </member>
+        <member name="M:NBM.MessageForm.OnConnectionComplete(NBM.Plugin.OperationCompleteArgs,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <param name="tag"></param>
+        </member>
+        <member name="M:NBM.MessageForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:NBM.MessageForm.sendButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.MessageForm.typingInBox_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.MessageForm.Say">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.MessageForm.OnSayAcknowledged(NBM.Plugin.OperationCompleteArgs,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <param name="tag"></param>
+        </member>
+        <member name="M:NBM.MessageForm.FlushTextQueue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.MessageForm.DoFlushTextQueue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.MessageForm.WriteToConversationBox(System.String,System.String,System.Drawing.Color)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="text"></param>
+            <param name="colour"></param>
+        </member>
+        <member name="M:NBM.MessageForm.WriteEventToConvoBox(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:NBM.MessageForm.OnFriendAdd(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.MessageForm.OnFriendRemove(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.MessageForm.OnFriendChangeStatus(NBM.Plugin.Friend,NBM.Plugin.OnlineStatus)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="status"></param>
+        </member>
+        <member name="M:NBM.MessageForm.OnFriendChangeDisplayName(NBM.Plugin.Friend,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="newName"></param>
+        </member>
+        <member name="M:NBM.MessageForm.OnFriendsListClear">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.MessageForm.OnBeginConnect">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.MessageForm.OnConnect">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.MessageForm.OnConnectCanceled">
+            <summary>
+            Called when the connection is canceled
+            </summary>
+        </member>
+        <member name="M:NBM.MessageForm.OnDisconnect(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="forced"></param>
+        </member>
+        <member name="M:NBM.MessageForm.OnInvitedToConversation(NBM.Plugin.Friend,NBM.Plugin.OperationCompleteEvent,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="opCompleteEvent"></param>
+            <param name="tag"></param>
+        </member>
+        <member name="M:NBM.MessageForm.OnChangeStatus(NBM.Plugin.OnlineStatus)">
+            <summary>
+            
+            </summary>
+            <param name="status"></param>
+        </member>
+        <member name="M:NBM.MessageForm.OnAddFriendToList(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="username"></param>
+        </member>
+        <member name="M:NBM.MessageForm.OnRemoveFriendFromList(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.MessageForm.OnBlockFriend(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.MessageForm.OnUnblockFriend(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.MessageForm.OnWriteDebug(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:NBM.MessageForm.OnPromptForStrangerHasAddedMe(NBM.Plugin.Friend,System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="reason"></param>
+            <param name="enableAddCheckbox"></param>
+        </member>
+        <member name="M:NBM.MessageForm.OnConversationConnected">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.MessageForm.OnConversationDisconnected">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.MessageForm.ShowForm">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.MessageForm.OnUserSay(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:NBM.MessageForm.OnFriendSay(NBM.Plugin.Friend,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="text"></param>
+        </member>
+        <member name="M:NBM.MessageForm.OnFriendJoin(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.MessageForm.OnFriendLeave(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.MessageForm.OnTypingNotification(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.MessageForm.OnTypingNotifyTimerElapse(System.Object,System.Timers.ElapsedEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:NBM.MessageForm.OnFileSendInvitation(NBM.Plugin.Friend,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="filename"></param>
+        </member>
+        <member name="M:NBM.MessageForm.toolBar_ButtonClick(System.Object,System.Windows.Forms.ToolBarButtonClickEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:NBM.MessageForm.OriginalFriend">
+            <summary>
+            Friend who started the conversation / who we clicked on
+            </summary>
+        </member>
+        <member name="T:NBM.FriendTreeNode">
+            <summary>
+            Tree node for ContactTreeView for friends.
+            </summary>
+        </member>
+        <member name="M:NBM.FriendTreeNode.#ctor(NBM.Protocol,NBM.Plugin.Friend)">
+            <summary>
+            Constructs a FriendTreeNode
+            </summary>
+            <param name="protocol">Associated protocol</param>
+            <param name="friend">Associated friend</param>
+        </member>
+        <member name="P:NBM.FriendTreeNode.Friend">
+            <summary>
+            Associated friend
+            </summary>
+        </member>
+        <member name="P:NBM.FriendTreeNode.Protocol">
+            <summary>
+            Associated protocol
+            </summary>
+        </member>
+        <member name="T:NBM.Diagnostics.Debug">
+            <summary>
+            Debug information window
+            Accessible through the protocol menu -> Debug Report
+            </summary>
+        </member>
+        <member name="F:NBM.Diagnostics.Debug.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:NBM.Diagnostics.Debug.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="postfix">String to append to the end of the window text</param>
+        </member>
+        <member name="M:NBM.Diagnostics.Debug.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:NBM.Diagnostics.Debug.WndProc(System.Windows.Forms.Message@)">
+            <summary>
+            Overrided WndProc so the window is hidden when the X button is clicked
+            </summary>
+            <param name="m"></param>
+        </member>
+        <member name="M:NBM.Diagnostics.Debug.OnActivated(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.Diagnostics.Debug.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:NBM.Diagnostics.Debug.copyToClipboardButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Copies the debug information to the clipboard.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.Diagnostics.Debug.closeButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Hides the window.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.Diagnostics.Debug.WriteLine(System.String)">
+            <summary>
+            Writes a line to the debug window.
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:NBM.Diagnostics.Debug.WriteLine(System.String,System.Object[])">
+            <summary>
+            Writes a line to the debug window.
+            </summary>
+            <param name="format"></param>
+            <param name="args"></param>
+        </member>
+        <member name="T:NBM.ProtocolTreeNode">
+            <summary>
+            Describes a tree node protocol for the contact tree view.
+            </summary>
+        </member>
+        <member name="M:NBM.ProtocolTreeNode.#ctor(NBM.Protocol,NBM.OfflineTreeNode,System.Int32)">
+            <summary>
+            Constructs a ProtocolTreeNode
+            </summary>
+            <param name="protocol"></param>
+            <param name="offlineTreeNode"></param>
+            <param name="protocolIndex">Each protocol is assigned a number, for image indexing purposes. This is that number.</param>
+        </member>
+        <member name="M:NBM.ProtocolTreeNode.GetFriendNodeImageIndex(NBM.Plugin.OnlineStatus)">
+            <summary>
+            Calculates the image index appropriate for the friend's status icon.
+            </summary>
+            <param name="status"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.ProtocolTreeNode.SetProtocolNodeImageIndex(NBM.Plugin.OnlineStatus)">
+            <summary>
+            Sets the protocol image index for the user status.
+            </summary>
+            <param name="status"></param>
+        </member>
+        <member name="M:NBM.ProtocolTreeNode.SetFriendToolTip(TreeNodeEx,System.String,NBM.Plugin.OnlineStatus,System.String)">
+            <summary>
+            Sets the tooltip for the apporpriate node.
+            </summary>
+            <param name="node"></param>
+            <param name="displayName"></param>
+            <param name="status"></param>
+            <param name="email"></param>
+        </member>
+        <member name="M:NBM.ProtocolTreeNode.OnFriendAdd(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.ProtocolTreeNode.OnFriendRemove(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.ProtocolTreeNode.OnFriendChangeStatus(NBM.Plugin.Friend,NBM.Plugin.OnlineStatus)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="newStatus"></param>
+        </member>
+        <member name="M:NBM.ProtocolTreeNode.OnFriendChangeDisplayName(NBM.Plugin.Friend,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="newName"></param>
+        </member>
+        <member name="M:NBM.ProtocolTreeNode.OnBeginConnect">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.ProtocolTreeNode.OnConnect">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.ProtocolTreeNode.OnConnectCanceled">
+            <summary>
+            Called when the connection is canceled
+            </summary>
+        </member>
+        <member name="M:NBM.ProtocolTreeNode.OnDisconnect(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="forced"></param>
+        </member>
+        <member name="M:NBM.ProtocolTreeNode.OnInvitedToConversation(NBM.Plugin.Friend,NBM.Plugin.OperationCompleteEvent,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="opCompleteEvent"></param>
+            <param name="tag"></param>
+        </member>
+        <member name="M:NBM.ProtocolTreeNode.OnChangeStatus(NBM.Plugin.OnlineStatus)">
+            <summary>
+            
+            </summary>
+            <param name="status"></param>
+        </member>
+        <member name="M:NBM.ProtocolTreeNode.OnAddFriendToList(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="username"></param>
+        </member>
+        <member name="M:NBM.ProtocolTreeNode.OnRemoveFriendFromList(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.ProtocolTreeNode.OnBlockFriend(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.ProtocolTreeNode.OnUnblockFriend(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.ProtocolTreeNode.OnWriteDebug(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:NBM.ProtocolTreeNode.OnPromptForStrangerHasAddedMe(NBM.Plugin.Friend,System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="reason"></param>
+            <param name="enableAddCheckbox"></param>
+        </member>
+        <member name="P:NBM.ProtocolTreeNode.Protocol">
+            <summary>
+            Associated protocol
+            </summary>
+        </member>
+        <member name="T:NBM.Protocol">
+            <summary>
+            Each plugin protocol has a Protocol object.
+            </summary>
+        </member>
+        <member name="M:NBM.Protocol.#ctor(TreeViewEx,NBM.TaskbarNotifier,System.String,IStorage)">
+            <summary>
+            Constructs a Protocol object.
+            </summary>
+            <param name="treeView">TreeViewEx object which holds the contact list for the application</param>
+            <param name="taskbarNotify">TaskbarNotify object which pops up on certain events</param>
+            <param name="fileName">Filename of the plugin assembly</param>
+            <param name="mainStorage">IStorage instance where the application's settings are stored</param>
+        </member>
+        <member name="M:NBM.Protocol.Invoke(System.Delegate,System.Object[])">
+            <summary>
+            Invoke a delegate on the UI thread.
+            </summary>
+            <param name="dele"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:NBM.Protocol.Invoke(System.Delegate)">
+            <summary>
+            Invoke a delegate on the UI thread.
+            </summary>
+            <param name="dele"></param>
+        </member>
+        <member name="M:NBM.Protocol.Dispose">
+            <summary>
+            Disposes the object.
+            </summary>
+        </member>
+        <member name="M:NBM.Protocol.Dispose(System.Boolean)">
+            <summary>
+            Disposes the object.
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:NBM.Protocol.Finalize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Protocol.AddListener(NBM.Plugin.IProtocolListener)">
+            <summary>
+            Add a listener to the protocol. The listeners receive events triggered by the plugin.
+            </summary>
+            <param name="listener"></param>
+        </member>
+        <member name="M:NBM.Protocol.RemoveListener(NBM.Plugin.IProtocolListener)">
+            <summary>
+            Remove a listener from the protocol.
+            </summary>
+            <param name="listener"></param>
+        </member>
+        <member name="M:NBM.Protocol.Connect(NBM.Plugin.OperationCompleteEvent)">
+            <summary>
+            Connect the protocol.
+            </summary>
+            <param name="opCompleteEvent"></param>
+        </member>
+        <member name="M:NBM.Protocol.pConnect(NBM.Plugin.OperationCompleteEvent)">
+            <summary>
+            Handler for the thread created by Connect().
+            </summary>
+            <param name="opCompleteEvent"></param>
+        </member>
+        <member name="M:NBM.Protocol.OnConnectionComplete(NBM.Plugin.OperationCompleteArgs,System.Object)">
+            <summary>
+            Occurs when the connection is complete.
+            </summary>
+            <param name="args"></param>
+            <param name="tag"></param>
+        </member>
+        <member name="M:NBM.Protocol.Disconnect(NBM.Plugin.OperationCompleteEvent)">
+            <summary>
+            Disconnects the protocol.
+            </summary>
+            <param name="opCompleteEvent"></param>
+        </member>
+        <member name="M:NBM.Protocol.OnCancelationComplete(NBM.Plugin.OperationCompleteArgs,System.Object)">
+            <summary>
+            Occurs when the protocol has completed canceling the connection
+            </summary>
+            <param name="args"></param>
+            <param name="tag"></param>
+        </member>
+        <member name="M:NBM.Protocol.OnDisconnectionComplete(NBM.Plugin.OperationCompleteArgs,System.Object)">
+            <summary>
+            Occurs when disconnection is complete.
+            </summary>
+            <param name="args"></param>
+            <param name="tag"></param>
+        </member>
+        <member name="M:NBM.Protocol.AddFriendToList(System.String,System.String,NBM.Plugin.OperationCompleteEvent)">
+            <summary>
+            Add a friend to the contact list.
+            </summary>
+            <param name="username">Username of friend to add</param>
+            <param name="message">[optional] Friend message</param>
+            <param name="op"></param>
+        </member>
+        <member name="M:NBM.Protocol.RemoveFriendFromList(NBM.Plugin.Friend,NBM.Plugin.OperationCompleteEvent)">
+            <summary>
+            Remove a friend from the contact list.
+            </summary>
+            <param name="friend"></param>
+            <param name="op"></param>
+        </member>
+        <member name="M:NBM.Protocol.BlockFriend(NBM.Plugin.Friend,NBM.Plugin.OperationCompleteEvent)">
+            <summary>
+            Block a friend
+            </summary>
+            <param name="friend"></param>
+            <param name="op"></param>
+        </member>
+        <member name="M:NBM.Protocol.OnBlockFriendCompleted(NBM.Plugin.OperationCompleteArgs,System.Object)">
+            <summary>
+            When the block friend operation is completed
+            </summary>
+            <param name="args"></param>
+            <param name="tag"></param>
+        </member>
+        <member name="M:NBM.Protocol.UnblockFriend(NBM.Plugin.Friend,NBM.Plugin.OperationCompleteEvent)">
+            <summary>
+            Unblock a friend.
+            </summary>
+            <param name="friend"></param>
+            <param name="op"></param>
+        </member>
+        <member name="M:NBM.Protocol.OnUnblockFriendCompleted(NBM.Plugin.OperationCompleteArgs,System.Object)">
+            <summary>
+            When the unblock operation is complete.
+            </summary>
+            <param name="args"></param>
+            <param name="tag"></param>
+        </member>
+        <member name="M:NBM.Protocol.ChangeStatus(NBM.Plugin.OnlineStatus,NBM.Plugin.OperationCompleteEvent)">
+            <summary>
+            Change the user's status
+            </summary>
+            <param name="status"></param>
+            <param name="opCompleteEvent"></param>
+        </member>
+        <member name="M:NBM.Protocol.OnStatusChangeComplete(NBM.Plugin.OperationCompleteArgs,System.Object)">
+            <summary>
+            When the status change operation is complete.
+            </summary>
+            <param name="args"></param>
+            <param name="tag"></param>
+        </member>
+        <member name="M:NBM.Protocol.pChangeStatus(NBM.Plugin.OnlineStatus)">
+            <summary>
+            Change the status settings and inform the listeners
+            </summary>
+            <param name="status"></param>
+        </member>
+        <member name="M:NBM.Protocol.StartConversation(NBM.Plugin.Friend,System.Boolean,System.Object,NBM.Plugin.OperationCompleteEvent)">
+            <summary>
+            Begins a conversation with the specified friend.
+            </summary>
+            <param name="friend"></param>
+            <param name="byinvite">Whether the conversation has been initiated by the user or by the plugin</param>
+            <param name="tag">Plugin-defined object</param>
+            <param name="opCompleteEvent"></param>
+        </member>
+        <member name="M:NBM.Protocol.OnMessageFormClosed(System.Object,System.EventArgs)">
+            <summary>
+            When a message form is closed, remove it from the conversation table.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.Protocol.OnFriendAdd(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Protocol.OnFriendRemove(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Protocol.OnFriendChangeStatus(NBM.Plugin.Friend,NBM.Plugin.OnlineStatus)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="status"></param>
+        </member>
+        <member name="M:NBM.Protocol.OnFriendChangeDisplayName(NBM.Plugin.Friend,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="newName"></param>
+        </member>
+        <member name="M:NBM.Protocol.OnBeginConnect">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Protocol.OnConnect">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Protocol.OnConnectCanceled">
+            <summary>
+            Called when the connection is canceled
+            </summary>
+        </member>
+        <member name="M:NBM.Protocol.OnDisconnect(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="forced"></param>
+        </member>
+        <member name="M:NBM.Protocol.OnInvitedToConversation(NBM.Plugin.Friend,NBM.Plugin.OperationCompleteEvent,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="opCompleteEvent"></param>
+            <param name="tag"></param>
+        </member>
+        <member name="M:NBM.Protocol.OnChangeStatus(NBM.Plugin.OnlineStatus)">
+            <summary>
+            
+            </summary>
+            <param name="status"></param>
+        </member>
+        <member name="M:NBM.Protocol.OnAddFriendToList(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="username"></param>
+        </member>
+        <member name="M:NBM.Protocol.OnRemoveFriendFromList(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Protocol.OnBlockFriend(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Protocol.OnUnblockFriend(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Protocol.OnWriteDebug(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:NBM.Protocol.OnPromptForStrangerHasAddedMe(NBM.Plugin.Friend,System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="reason"></param>
+            <param name="enableAddCheckbox"></param>
+        </member>
+        <member name="M:NBM.Protocol.OnPromptForStrangerHasAddedMeFunc(NBM.Plugin.Friend,System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="reason"></param>
+            <param name="enableAddCheckbox"></param>
+        </member>
+        <member name="M:NBM.Protocol.SelfDestruct">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.Protocol.OptionsNodes">
+            <summary>
+            An arraylist of IOptions defined by the plugin.
+            </summary>
+        </member>
+        <member name="P:NBM.Protocol.Connected">
+            <summary>
+            Gets a value determining whether the current protocol is connected or not.
+            </summary>
+        </member>
+        <member name="P:NBM.Protocol.ClassFactory">
+            <summary>
+            ClassFactory object associated with the protocol.
+            </summary>
+        </member>
+        <member name="P:NBM.Protocol.Server">
+            <summary>
+            ProtocolServer object associated with the protocol.
+            </summary>
+        </member>
+        <member name="P:NBM.Protocol.IProtocol">
+            <summary>
+            IProtocol object associated with the protocol.
+            </summary>
+        </member>
+        <member name="P:NBM.Protocol.Settings">
+            <summary>
+            IProtocolSettings object associated with the protocol.
+            </summary>
+        </member>
+        <member name="P:NBM.Protocol.Name">
+            <summary>
+            Name of the protocol.
+            </summary>
+        </member>
+        <member name="P:NBM.Protocol.Enabled">
+            <summary>
+            True if the user has enabled the protocol, false otherwise.
+            </summary>
+        </member>
+        <member name="P:NBM.Protocol.Reporter">
+            <summary>
+            ProtocolReporter object associated with the protocol, the reporter is used for
+            debugging purposes
+            </summary>
+        </member>
+        <member name="T:NBM.TaskbarNotifier">
+            <summary>
+            TaskbarNotifier allows to display MSN style/Skinned instant messaging popups
+            </summary>
+        </member>
+        <member name="F:NBM.TaskbarNotifier.TitleRectangle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.TaskbarNotifier.ContentRectangle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.TaskbarNotifier.TitleClickable">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.TaskbarNotifier.ContentClickable">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.TaskbarNotifier.CloseClickable">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.TaskbarNotifier.EnableSelectionRectangle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.TaskbarNotifier.#ctor">
+            <summary>
+            The Constructor for TaskbarNotifier
+            </summary>
+        </member>
+        <member name="M:NBM.TaskbarNotifier.Show(System.String,System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Displays the popup for a certain amount of time
+            </summary>
+            <param name="strTitle">The string which will be shown as the title of the popup</param>
+            <param name="strContent">The string which will be shown as the content of the popup</param>
+            <param name="nTimeToShow">Duration of the showing animation (in milliseconds)</param>
+            <param name="nTimeToStay">Duration of the visible state before collapsing (in milliseconds)</param>
+            <param name="nTimeToHide">Duration of the hiding animation (in milliseconds)</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:NBM.TaskbarNotifier.Hide">
+            <summary>
+            Hides the popup
+            </summary>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:NBM.TaskbarNotifier.SetBackgroundBitmap(System.String,System.Drawing.Color)">
+            <summary>
+            Sets the background bitmap and its transparency color
+            </summary>
+            <param name="strFilename">Path of the Background Bitmap on the disk</param>
+            <param name="transparencyColor">Color of the Bitmap which won't be visible</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:NBM.TaskbarNotifier.SetBackgroundBitmap(System.Drawing.Image,System.Drawing.Color)">
+            <summary>
+            Sets the background bitmap and its transparency color
+            </summary>
+            <param name="image">Image/Bitmap object which represents the Background Bitmap</param>
+            <param name="transparencyColor">Color of the Bitmap which won't be visible</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:NBM.TaskbarNotifier.SetCloseBitmap(System.String,System.Drawing.Color,System.Drawing.Point)">
+            <summary>
+            Sets the 3-State Close Button bitmap, its transparency color and its coordinates
+            </summary>
+            <param name="strFilename">Path of the 3-state Close button Bitmap on the disk (width must a multiple of 3)</param>
+            <param name="transparencyColor">Color of the Bitmap which won't be visible</param>
+            <param name="position">Location of the close button on the popup</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:NBM.TaskbarNotifier.SetCloseBitmap(System.Drawing.Image,System.Drawing.Color,System.Drawing.Point)">
+            <summary>
+            Sets the 3-State Close Button bitmap, its transparency color and its coordinates
+            </summary>
+            <param name="image">Image/Bitmap object which represents the 3-state Close button Bitmap (width must be a multiple of 3)</param>
+            <param name="transparencyColor">Color of the Bitmap which won't be visible</param>
+            /// <param name="position">Location of the close button on the popup</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:NBM.TaskbarNotifier.DrawCloseButton(System.Drawing.Graphics)">
+            <summary>
+            
+            </summary>
+            <param name="grfx"></param>
+        </member>
+        <member name="M:NBM.TaskbarNotifier.DrawText(System.Drawing.Graphics)">
+            <summary>
+            
+            </summary>
+            <param name="grfx"></param>
+        </member>
+        <member name="M:NBM.TaskbarNotifier.CalculateMouseRectangles">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.TaskbarNotifier.BitmapToRegion(System.Drawing.Bitmap,System.Drawing.Color)">
+            <summary>
+            
+            </summary>
+            <param name="bitmap"></param>
+            <param name="transparencyColor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.TaskbarNotifier.OnTimer(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="ea"></param>
+        </member>
+        <member name="M:NBM.TaskbarNotifier.OnMouseEnter(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="ea"></param>
+        </member>
+        <member name="M:NBM.TaskbarNotifier.OnMouseLeave(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="ea"></param>
+        </member>
+        <member name="M:NBM.TaskbarNotifier.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="mea"></param>
+        </member>
+        <member name="M:NBM.TaskbarNotifier.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="mea"></param>
+        </member>
+        <member name="M:NBM.TaskbarNotifier.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="mea"></param>
+        </member>
+        <member name="M:NBM.TaskbarNotifier.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="pea"></param>
+        </member>
+        <member name="E:NBM.TaskbarNotifier.CloseClick">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:NBM.TaskbarNotifier.TitleClick">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:NBM.TaskbarNotifier.ContentClick">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NBM.TaskbarNotifier.TaskbarState">
+            <summary>
+            Get the current TaskbarState (hidden, showing, visible, hiding)
+            </summary>
+        </member>
+        <member name="P:NBM.TaskbarNotifier.TitleText">
+            <summary>
+            Get/Set the popup Title Text
+            </summary>
+        </member>
+        <member name="P:NBM.TaskbarNotifier.ContentText">
+            <summary>
+            Get/Set the popup Content Text
+            </summary>
+        </member>
+        <member name="P:NBM.TaskbarNotifier.NormalTitleColor">
+            <summary>
+            Get/Set the Normal Title Color
+            </summary>
+        </member>
+        <member name="P:NBM.TaskbarNotifier.HoverTitleColor">
+            <summary>
+            Get/Set the Hover Title Color
+            </summary>
+        </member>
+        <member name="P:NBM.TaskbarNotifier.NormalContentColor">
+            <summary>
+            Get/Set the Normal Content Color
+            </summary>
+        </member>
+        <member name="P:NBM.TaskbarNotifier.HoverContentColor">
+            <summary>
+            Get/Set the Hover Content Color
+            </summary>
+        </member>
+        <member name="P:NBM.TaskbarNotifier.NormalTitleFont">
+            <summary>
+            Get/Set the Normal Title Font
+            </summary>
+        </member>
+        <member name="P:NBM.TaskbarNotifier.HoverTitleFont">
+            <summary>
+            Get/Set the Hover Title Font
+            </summary>
+        </member>
+        <member name="P:NBM.TaskbarNotifier.NormalContentFont">
+            <summary>
+            Get/Set the Normal Content Font
+            </summary>
+        </member>
+        <member name="P:NBM.TaskbarNotifier.HoverContentFont">
+            <summary>
+            Get/Set the Hover Content Font
+            </summary>
+        </member>
+        <member name="P:NBM.TaskbarNotifier.KeepVisibleOnMousOver">
+            <summary>
+            Indicates if the popup should remain visible when the mouse pointer is over it.
+            Added Rev 002
+            </summary>
+        </member>
+        <member name="P:NBM.TaskbarNotifier.ReShowOnMouseOver">
+            <summary>
+            Indicates if the popup should appear again when mouse moves over it while it's disappearing.
+            Added Rev 002
+            </summary>
+        </member>
+        <member name="T:NBM.TaskbarNotifier.TaskbarStates">
+            <summary>
+            List of the different popup animation status
+            </summary>
+        </member>
+        <member name="F:NBM.TaskbarNotifier.TaskbarStates.hidden">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.TaskbarNotifier.TaskbarStates.appearing">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.TaskbarNotifier.TaskbarStates.visible">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:NBM.TaskbarNotifier.TaskbarStates.disappearing">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:NBM.PlaySoundFlags">
+            <summary>
+            Flags for the PlaySound() method
+            </summary>
+        </member>
+        <member name="F:NBM.PlaySoundFlags.Application">
+            <summary>
+            The sound is played using an application-specific association.
+            </summary>
+        </member>
+        <member name="F:NBM.PlaySoundFlags.Alias">
+            <summary>
+            The pszSound parameter is a system-event alias in the registry or the WIN.INI file.
+            Do not use with either SND_FILENAME or SND_RESOURCE.
+            </summary>
+        </member>
+        <member name="F:NBM.PlaySoundFlags.AliasId">
+            <summary>
+            The pszSound parameter is a predefined sound identifier.
+            </summary>
+        </member>
+        <member name="F:NBM.PlaySoundFlags.Asynchronous">
+            <summary>
+            The sound is played asynchronously and PlaySound returns immediately
+            after beginning the sound. To terminate an asynchronously played waveform sound,
+            call PlaySound with pszSound set to NULL.
+            </summary>
+        </member>
+        <member name="F:NBM.PlaySoundFlags.Loop">
+            <summary>
+            The sound plays repeatedly until PlaySound is called again with the pszSound parameter
+            set to NULL. You must also specify the SND_ASYNC flag to indicate an asynchronous
+            sound event.
+            </summary>
+        </member>
+        <member name="F:NBM.PlaySoundFlags.NoDefault">
+            <summary>
+            No default sound event is used. If the sound cannot be found,
+            PlaySound returns silently without playing the default sound.
+            </summary>
+        </member>
+        <member name="F:NBM.PlaySoundFlags.NoStop">
+            <summary>
+            The specified sound event will yield to another sound event that is already playing.
+            If a sound cannot be played because the resource needed to generate that sound
+            is busy playing another sound, the function immediately returns FALSE without
+            playing the requested sound. 
+            If this flag is not specified,
+            PlaySound attempts to stop the currently playing sound so that the device
+            can be used to play the new sound.
+            </summary>
+        </member>
+        <member name="F:NBM.PlaySoundFlags.NoWait">
+            <summary>
+            If the driver is busy, return immediately without playing the sound.
+            </summary>
+        </member>
+        <member name="F:NBM.PlaySoundFlags.Purge">
+            <summary>
+            Sounds are to be stopped for the calling task.
+            If pszSound is not NULL, all instances of the specified sound are stopped.
+            If pszSound is NULL, all sounds that are playing on behalf of the calling task are stopped. 
+            You must also specify the instance handle to stop SND_RESOURCE events.
+            </summary>
+        </member>
+        <member name="F:NBM.PlaySoundFlags.Synchronous">
+            <summary>
+            Synchronous playback of a sound event. PlaySound returns after the sound event completes. 
+            </summary>
+        </member>
+        <member name="T:NBM.FlashWindowFlags">
+            <summary>
+            Flags for the FlashWindow() method
+            </summary>
+        </member>
+        <member name="F:NBM.FlashWindowFlags.FlashTray">
+            <summary>
+            Flash the taskbar button
+            </summary>
+        </member>
+        <member name="F:NBM.FlashWindowFlags.FlashCaption">
+            <summary>
+            Flash the window caption
+            </summary>
+        </member>
+        <member name="F:NBM.FlashWindowFlags.FlashBoth">
+            <summary>
+            Flash both the window caption and taskbar button
+            </summary>
+        </member>
+        <member name="T:NBM.NativeMethods">
+            <summary>
+            Holds all Windows native methods.
+            </summary>
+        </member>
+        <member name="M:NBM.NativeMethods.SendMessage(System.Windows.Forms.Control,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="control"></param>
+            <param name="msg"></param>
+            <param name="wparam"></param>
+            <param name="lparam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.NativeMethods.SendMessage(System.Windows.Forms.Control,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="control"></param>
+            <param name="msg"></param>
+            <param name="wparam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.NativeMethods.SendMessage(System.Windows.Forms.Control,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="control"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.NativeMethods.PlaySoundFromFile(System.String,NBM.PlaySoundFlags)">
+            <summary>
+            
+            </summary>
+            <param name="fileName"></param>
+            <param name="flags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.NativeMethods.PlaySoundFromResource(System.String,System.IntPtr,NBM.PlaySoundFlags)">
+            <summary>
+            
+            </summary>
+            <param name="resourceName"></param>
+            <param name="module"></param>
+            <param name="flags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.NativeMethods.PlaySoundFromMemory(System.IntPtr,NBM.PlaySoundFlags)">
+            <summary>
+            
+            </summary>
+            <param name="memoryPtr"></param>
+            <param name="flags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.NativeMethods.FlashWindow(System.Windows.Forms.Form,System.UInt32,NBM.FlashWindowFlags)">
+            <summary>
+            
+            </summary>
+            <param name="form"></param>
+            <param name="count"></param>
+            <param name="flags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.NativeMethods.FlashWindow(System.Windows.Forms.Form,System.UInt32,NBM.FlashWindowFlags,System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="form"></param>
+            <param name="count"></param>
+            <param name="flags"></param>
+            <param name="timeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.NativeMethods.FlashWindowUntilStop(System.Windows.Forms.Form,System.UInt32,NBM.FlashWindowFlags)">
+            <summary>
+            
+            </summary>
+            <param name="form"></param>
+            <param name="count"></param>
+            <param name="flags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.NativeMethods.FlashWindowUntilStop(System.Windows.Forms.Form,System.UInt32,NBM.FlashWindowFlags,System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="form"></param>
+            <param name="count"></param>
+            <param name="flags"></param>
+            <param name="timeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.NativeMethods.FlashWindowStop(System.Windows.Forms.Form)">
+            <summary>
+            
+            </summary>
+            <param name="form"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.NativeMethods.VerticalScrollToBottom(System.Windows.Forms.Control)">
+            <summary>
+            
+            </summary>
+            <param name="control"></param>
+        </member>
+        <member name="T:NBM.OnFriendAddForm">
+            <summary>
+            When a some stranger adds you to their contact list, this form pops up.
+            </summary>
+        </member>
+        <member name="F:NBM.OnFriendAddForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:NBM.OnFriendAddForm.#ctor(NBM.Plugin.IProtocol,NBM.Plugin.Friend,System.String,System.Boolean)">
+            <summary>
+            Constructs an OnFriendAddForm form.
+            </summary>
+            <param name="protocol">Associated protocol</param>
+            <param name="friend">Person who's added you to their list</param>
+            <param name="reason">[optional] Stranger's message</param>
+            <param name="enableAddCheckbox">Whether to enable the add user checkbox</param>
+        </member>
+        <member name="M:NBM.OnFriendAddForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:NBM.OnFriendAddForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:NBM.OnFriendAddForm.okButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.OnFriendAddForm.cancelButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:NBM.AddFriendForm">
+            <summary>
+            Form that pops up whenever you want to add a fried to your contact list.
+            </summary>
+        </member>
+        <member name="F:NBM.AddFriendForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:NBM.AddFriendForm.#ctor(NBM.Protocol)">
+            <summary>
+            Constructs an AddFriendForm.
+            </summary>
+            <param name="protocol">Associated protocol.</param>
+        </member>
+        <member name="M:NBM.AddFriendForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:NBM.AddFriendForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:NBM.AddFriendForm.addButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.AddFriendForm.cancelButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:NBM.AddFriendForm.Username">
+            <summary>
+            Username of user to add
+            </summary>
+        </member>
+        <member name="P:NBM.AddFriendForm.Message">
+            <summary>
+            If the protocol supports messages when adding users, this is the message.
+            </summary>
+        </member>
+        <member name="T:NBM.OptionNodes.EventOptions">
+            <summary>
+            Options on events. Like when a friend comes online or a message is received.
+            </summary>
+        </member>
+        <member name="F:NBM.OptionNodes.EventOptions.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:NBM.OptionNodes.EventOptions.#ctor">
+            <summary>
+            Constructs an EventOptions object.
+            </summary>
+        </member>
+        <member name="M:NBM.OptionNodes.EventOptions.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:NBM.OptionNodes.EventOptions.Save">
+            <summary>
+            Saves settings
+            </summary>
+        </member>
+        <member name="M:NBM.OptionNodes.EventOptions.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:NBM.OptionNodes.EventOptions.friendOnlineSoundBrowseButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.OptionNodes.EventOptions.incomingMessageSoundBrowseButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.OptionNodes.EventOptions.ShowOpenSoundDialog(System.String@)">
+            <summary>
+            Shows the open sound file dialog.
+            </summary>
+            <param name="filename">Filename of sound file selected will be put into this parameter.</param>
+            <returns></returns>
+        </member>
+        <member name="P:NBM.OptionNodes.EventOptions.NodeName">
+            <summary>
+            Name of node
+            </summary>
+        </member>
+        <member name="T:NBM.SysTrayContextMenu">
+            <summary>
+            Context menu for the system tray icon.
+            </summary>
+        </member>
+        <member name="M:NBM.SysTrayContextMenu.#ctor(NBM.MainForm)">
+            <summary>
+            Constructs a SysTrayContextMenu
+            </summary>
+            <param name="mainForm"></param>
+        </member>
+        <member name="M:NBM.SysTrayContextMenu.OnStatusClick(System.Object,System.EventArgs)">
+            <summary>
+            When the user changes the status via the status menu item
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.SysTrayContextMenu.OnOptions(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:NBM.SysTrayContextMenu.OnExit(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:NBM.SysTrayContextMenu.OnConnectAll(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:NBM.SysTrayContextMenu.OnDisconnectAll(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="T:NBM.ProtocolMenu">
+            <summary>
+            Context menu for the protocols
+            </summary>
+        </member>
+        <member name="M:NBM.ProtocolMenu.#ctor(NBM.MainForm,NBM.Protocol)">
+            <summary>
+            Constructs a ProtocolMenu
+            </summary>
+            <param name="mainForm"></param>
+            <param name="protocol"></param>
+        </member>
+        <member name="M:NBM.ProtocolMenu.OnDispose(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.ProtocolMenu.connectMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.ProtocolMenu.disconnectMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.ProtocolMenu.addfriendMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.ProtocolMenu.debugReportMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.ProtocolMenu.optionsMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.ProtocolMenu.selfdestruct_click(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.ProtocolMenu.OnFriendAdd(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.ProtocolMenu.OnFriendRemove(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.ProtocolMenu.OnFriendChangeStatus(NBM.Plugin.Friend,NBM.Plugin.OnlineStatus)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="status"></param>
+        </member>
+        <member name="M:NBM.ProtocolMenu.OnFriendChangeDisplayName(NBM.Plugin.Friend,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="newName"></param>
+        </member>
+        <member name="M:NBM.ProtocolMenu.OnBeginConnect">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.ProtocolMenu.OnConnect">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.ProtocolMenu.OnConnectCanceled">
+            <summary>
+            Called when the connection is canceled
+            </summary>
+        </member>
+        <member name="M:NBM.ProtocolMenu.OnDisconnect(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="forced"></param>
+        </member>
+        <member name="M:NBM.ProtocolMenu.OnChangeStatus(NBM.Plugin.OnlineStatus)">
+            <summary>
+            
+            </summary>
+            <param name="status"></param>
+        </member>
+        <member name="M:NBM.ProtocolMenu.OnInvitedToConversation(NBM.Plugin.Friend,NBM.Plugin.OperationCompleteEvent,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="opCompleteEvent"></param>
+            <param name="tag"></param>
+        </member>
+        <member name="M:NBM.ProtocolMenu.OnAddFriendToList(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="username"></param>
+        </member>
+        <member name="M:NBM.ProtocolMenu.OnRemoveFriendFromList(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.ProtocolMenu.OnBlockFriend(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.ProtocolMenu.OnUnblockFriend(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.ProtocolMenu.OnWriteDebug(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:NBM.ProtocolMenu.OnPromptForStrangerHasAddedMe(NBM.Plugin.Friend,System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="reason"></param>
+            <param name="enableAddCheckbox"></param>
+        </member>
+        <member name="T:NBM.OfflineTreeNode">
+            <summary>
+            Treenode for offline contacts.
+            </summary>
+        </member>
+        <member name="M:NBM.OfflineTreeNode.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:NBM.MainForm">
+            <summary>
+            MainForm for the application.
+            Holds the contact list etc.
+            </summary>
+        </member>
+        <member name="F:NBM.MainForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:NBM.MainForm.#ctor(IStorage)">
+            <summary>
+            Constructs a MainForm object. This is where most of the fun happens.
+            </summary>
+            <param name="mainStorage"></param>
+        </member>
+        <member name="M:NBM.MainForm.UpdateOptions">
+            <summary>
+            Updates the options. When a user changes the options through the options form,
+            this ensures anything he's changes takes effect immediately.
+            </summary>
+        </member>
+        <member name="M:NBM.MainForm.ChangeGlobalStatus(NBM.Plugin.OnlineStatus)">
+            <summary>
+            Changes the user's global status
+            </summary>
+            <param name="status"></param>
+        </member>
+        <member name="M:NBM.MainForm.ConnectAll">
+            <summary>
+            Connects all the protocols
+            </summary>
+        </member>
+        <member name="M:NBM.MainForm.DisconnectAll">
+            <summary>
+            Disconnects all protocols
+            </summary>
+        </member>
+        <member name="M:NBM.MainForm.OnLocationChanged(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.MainForm.OnSizeChanged(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.MainForm.LoadPlugins">
+            <summary>
+            Loads all protocols
+            </summary>
+        </member>
+        <member name="M:NBM.MainForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:NBM.MainForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:NBM.MainForm.Exit">
+            <summary>
+            Single exit point for the application.
+            </summary>
+        </member>
+        <member name="M:NBM.MainForm.WndProc(System.Windows.Forms.Message@)">
+            <summary>
+            
+            </summary>
+            <param name="m"></param>
+        </member>
+        <member name="M:NBM.MainForm.OnContactTreeDoubleClick(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:NBM.MainForm.Protocols">
+            <summary>
+            List of protocols used in the application
+            Note - this also contains protocols which the user may not have enabled,
+            so check Protocol.Enabled first, k?
+            </summary>
+        </member>
+        <member name="P:NBM.MainForm.CreateParams">
+            <summary>
+            Override createparams so we can set the initial size and position of the form.
+            </summary>
+        </member>
+        <member name="T:NBM.StatusMenuItem">
+            <summary>
+            Status menu item.
+            </summary>
+        </member>
+        <member name="M:NBM.StatusMenuItem.#ctor(NBM.Plugin.OnlineStatus,System.EventHandler)">
+            <summary>
+            Constructs a status menu item
+            </summary>
+            <param name="status">Status to represent</param>
+            <param name="e">Click event handler</param>
+        </member>
+        <member name="P:NBM.StatusMenuItem.Status">
+            <summary>
+            Status which represents
+            </summary>
+        </member>
+        <member name="T:NBM.StatusMenu">
+            <summary>
+            Context menu containing the status's available.
+            </summary>
+        </member>
+        <member name="M:NBM.StatusMenu.#ctor(System.String,System.EventHandler)">
+            <summary>
+            Constructs a StatusMenu
+            </summary>
+            <param name="text">Text shown on menu option</param>
+            <param name="statusClick">Event handler for when a menuitem is clicked</param>
+        </member>
+        <member name="T:NBM.OptionNodes.ConnectionOptions">
+            <summary>
+            Connection options - for deciding what kind of proxy to use to connect.
+            </summary>
+        </member>
+        <member name="F:NBM.OptionNodes.ConnectionOptions.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:NBM.OptionNodes.ConnectionOptions.#ctor">
+            <summary>
+            Constructs a ConnectionOptions object.
+            </summary>
+        </member>
+        <member name="M:NBM.OptionNodes.ConnectionOptions.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:NBM.OptionNodes.ConnectionOptions.Save">
+            <summary>
+            Save settings
+            </summary>
+        </member>
+        <member name="M:NBM.OptionNodes.ConnectionOptions.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:NBM.OptionNodes.ConnectionOptions.directRadioButton_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.OptionNodes.ConnectionOptions.proxyRadioButton_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:NBM.OptionNodes.ConnectionOptions.useAuthCheckBox_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:NBM.OptionNodes.ConnectionOptions.NodeName">
+            <summary>
+            Name of node
+            </summary>
+        </member>
+        <member name="T:NBM.OptionNodes.BasicProtocolOptions">
+            <summary>
+            Basic protocol options - stuff like username, password and server information
+            </summary>
+        </member>
+        <member name="F:NBM.OptionNodes.BasicProtocolOptions.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:NBM.OptionNodes.BasicProtocolOptions.#ctor(NBM.Plugin.ProtocolSettings)">
+            <summary>
+            Constructs a basic protocol options object.
+            </summary>
+            <param name="settings"></param>
+        </member>
+        <member name="M:NBM.OptionNodes.BasicProtocolOptions.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:NBM.OptionNodes.BasicProtocolOptions.Save">
+            <summary>
+            Saves the information from the form to the ProtocolSettings object.
+            </summary>
+        </member>
+        <member name="M:NBM.OptionNodes.BasicProtocolOptions.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:NBM.OptionNodes.BasicProtocolOptions.enableCheckBox_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:NBM.OptionNodes.BasicProtocolOptions.NodeName">
+            <summary>
+            Name of node
+            </summary>
+        </member>
+        <member name="T:NBM.Diagnostics.ProtocolReporter">
+            <summary>
+            Summary description for ProtocolReporter.
+            </summary>
+        </member>
+        <member name="M:NBM.Diagnostics.ProtocolReporter.#ctor(NBM.Protocol)">
+            <summary>
+            Constructs a ProtocolReporter
+            </summary>
+            <param name="protocol">Protocol to attach to</param>
+        </member>
+        <member name="M:NBM.Diagnostics.ProtocolReporter.Show">
+            <summary>
+            Show the debug window
+            </summary>
+        </member>
+        <member name="M:NBM.Diagnostics.ProtocolReporter.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Diagnostics.ProtocolReporter.Hide">
+            <summary>
+            Hide the debug window
+            </summary>
+        </member>
+        <member name="M:NBM.Diagnostics.ProtocolReporter.OnFriendAdd(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Diagnostics.ProtocolReporter.OnFriendRemove(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Diagnostics.ProtocolReporter.OnFriendChangeStatus(NBM.Plugin.Friend,NBM.Plugin.OnlineStatus)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="status"></param>
+        </member>
+        <member name="M:NBM.Diagnostics.ProtocolReporter.OnFriendChangeDisplayName(NBM.Plugin.Friend,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="newName"></param>
+        </member>
+        <member name="M:NBM.Diagnostics.ProtocolReporter.OnBeginConnect">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Diagnostics.ProtocolReporter.OnConnect">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NBM.Diagnostics.ProtocolReporter.OnConnectCanceled">
+            <summary>
+            Called when the connection is canceled
+            </summary>
+        </member>
+        <member name="M:NBM.Diagnostics.ProtocolReporter.OnDisconnect(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="forced"></param>
+        </member>
+        <member name="M:NBM.Diagnostics.ProtocolReporter.OnChangeStatus(NBM.Plugin.OnlineStatus)">
+            <summary>
+            
+            </summary>
+            <param name="status"></param>
+        </member>
+        <member name="M:NBM.Diagnostics.ProtocolReporter.OnInvitedToConversation(NBM.Plugin.Friend,NBM.Plugin.OperationCompleteEvent,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="opCompleteEvent"></param>
+            <param name="tag"></param>
+        </member>
+        <member name="M:NBM.Diagnostics.ProtocolReporter.OnAddFriendToList(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="username"></param>
+        </member>
+        <member name="M:NBM.Diagnostics.ProtocolReporter.OnRemoveFriendFromList(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Diagnostics.ProtocolReporter.OnBlockFriend(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Diagnostics.ProtocolReporter.OnUnblockFriend(NBM.Plugin.Friend)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+        </member>
+        <member name="M:NBM.Diagnostics.ProtocolReporter.OnWriteDebug(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:NBM.Diagnostics.ProtocolReporter.OnPromptForStrangerHasAddedMe(NBM.Plugin.Friend,System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="friend"></param>
+            <param name="reason"></param>
+            <param name="enableAddCheckbox"></param>
+        </member>
+        <member name="P:NBM.Diagnostics.ProtocolReporter.Visible">
+            <summary>
+            Whether the debug window is visible or not
+            </summary>
+        </member>
+        <member name="T:NBM.ClassFactory">
+            <summary>
+            Creates class instances for the plugin architecture.
+            </summary>
+        </member>
+        <member name="M:NBM.ClassFactory.#ctor(System.String)">
+            <summary>
+            Constructs an instance of ClassFactory
+            </summary>
+            <param name="fileName">Filename of the assembly to load instances from</param>
+        </member>
+        <member name="M:NBM.ClassFactory.CreateProtocol(NBM.Plugin.ProtocolControl,NBM.Plugin.ProtocolSettings)">
+            <summary>
+            Creates an instance of the plugin-implemented IProtocol class.
+            </summary>
+            <param name="control"></param>
+            <param name="settings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.ClassFactory.CreateConversation(NBM.Plugin.IProtocol,NBM.Plugin.ConversationControl,NBM.Plugin.ProtocolSettings)">
+            <summary>
+            Creates an instance of the plugin-implemented IConversation class.
+            </summary>
+            <param name="protocol"></param>
+            <param name="control"></param>
+            <param name="settings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.ClassFactory.CreateSettings(NBM.Plugin.IConstants,IStorage,System.Collections.ArrayList)">
+            <summary>
+            Creates an instance of the plugin-implemented ProtocolSettings class.
+            </summary>
+            <param name="constants"></param>
+            <param name="storage"></param>
+            <param name="optionsList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBM.ClassFactory.CreateConstants">
+            <summary>
+            Creates an instance of the plugin-implemented IConstants class.
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
